@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Roboto:wght@100;500&display=swap');
+
+        body {
+            font-family: 'Crimson Text', serif;
+            margin: 0;
+            padding: 0;
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        .section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 2s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        #section-1{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* tamaño de la seccion */
+        #section-2{
+            min-height: 70vh;
+        }
+        #section-3, #section-5, #section-6, #section-7{
+            min-height: 80vh;
+        }
+        #section-8{
+            height: auto;
+        }
+        
+        /* fondo de la seccion */
+        #section-2, #section-5, #section-7 {
+            background: #FFFFFF;
+            color: #543c39;
+        }
+
+        #section-1, #section-3, #section-6, #section-8{
+            background: url('../img/f9.jpg') no-repeat center center/cover;
+            color: #FFFFFF;
+        }
+
+        #section-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #section-4{
+            min-height: 50vh;
+            background-color: #D4A5A5;
+            color: #FFFFFF;
+        }
+
+        /* titulos */
+        .section h1 {
+            font-size: 3em;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        #tituloFinal{ /* titulo h3 en section-8 */
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        /*titulos h2 en rosa*/
+        .color1{
+            color: #D4A5A5;
+        }
+
+        .section p {
+            font-family: 'Crimson Text', sans-serif;
+            font-size: 2rem;
+        }
+
+        .section h2, .section p{
+            transform: translateY(-30px);
+            transition: all 5s ease;
+        }
+        
+        /* boton de confirmar asistencia */
+        #confirm-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #FFFFFF;
+            background-color: #D4A5A5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        #confirm-button:hover {
+            background-color: #E6B8B7;
+        }
+
+        /* contador de dias */
+
+        #countdown {
+            font-size: 1.5rem;
+            color: #D4A5A5;
+            position: absolute; /* Se coloca en una posición absoluta en relación con el contenedor padre */
+            bottom: 85%; /*Lo coloca justo después de la primera sección */
+            left: 50%; /*Lo centra horizontalmente */
+            transform: translate(-50%, -50%); /*Ajusta la posición exacta al centro */
+            display: flex;
+            gap: 10px;
+            color: #D4A5A5;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            width: 85px;
+            height: 85px;
+            border: 2px solid #D4A5A5;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            color: #D4A5A5;
+        }
+
+        .countdown-item span {
+            font-size: 1.5rem;
+            color: #D4A5A5;
+        }
+
+        img{
+            margin: 20px 0;
+        }
+
+        /* reproductor de musica */
+        .audio-button {
+            background-color: #D4A5A5;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .audio-button svg {
+            stroke: white;
+            width: 24px;
+            height: 24px;
+        }
+
+        #play-pause{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        iframe{
+            margin-bottom: 10px;
+        }
+
+        /* img zoom */
+
+        @keyframes zoomIn {
+            0% {
+                opacity: 0.5;
+                transform: scale(0.7);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .section img {
+            animation: zoomIn 2.5s ease-out infinite;
+        }
+        
