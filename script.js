@@ -1,5 +1,5 @@
 // Cambiá esta fecha por la fecha real del evento (AAAA-MM-DDTHH:MM:SS).
-const eventDate = new Date("2027-08-08T17:00:00");
+const eventDate = new Date("2026-12-05T17:00:00");
 
 function updateCountdown() {
   const remaining = Math.max(0, eventDate.getTime() - Date.now());
@@ -68,21 +68,71 @@ document.querySelectorAll(".local-form").forEach(form => {
 
 // Galería de ejemplo. Cuando agregues tus fotos, copiá los archivos en /img
 // y cambiá los nombres de este arreglo. Sin fotos cargadas se muestra el placeholder.
-const galleryFiles = ["img/foto1.jpg", "img/foto2.jpg", "img/foto3.jpg"];
+// Galería: cambia la foto solo cuando la imagen solicitada cargó correctamente.
+const galleryFiles = [
+  "img/foto1.jpg",
+  "img/foto2.jpg",
+  "img/foto3.jpg"
+];
+
 let galleryIndex = 0;
 const galleryImage = document.getElementById("galleryImage");
 const placeholder = document.getElementById("photoPlaceholder");
 const dots = [...document.querySelectorAll(".dots span")];
+let galleryRequest = 0;
+
 function showGalleryImage(index) {
   galleryIndex = (index + galleryFiles.length) % galleryFiles.length;
-  galleryImage.src = galleryFiles[galleryIndex];
-  galleryImage.style.display = "block";
-  placeholder.style.display = "none";
-  dots.forEach((dot, i) => dot.classList.toggle("active", i === galleryIndex));
-  galleryImage.onerror = () => {
-    galleryImage.style.display = "none";
-    placeholder.style.display = "flex";
+
+  const requestedIndex = galleryIndex;
+  const requestId = ++galleryRequest;
+  const candidate = new Image();
+
+  candidate.onload = () => {
+    // Ignora cargas anteriores si se hicieron clics rápidos.
+    if (requestId !== galleryRequest) return;
+
+    galleryImage.src = candidate.src;
+    galleryImage.style.display = "block";
+    placeholder.style.display = "none";
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === requestedIndex);
+    });
   };
+
+  candidate.onerror = () => {
+    if (requestId !== galleryRequest) return;
+
+    // Intenta cargar la siguiente foto si el archivo falla.
+    const nextIndex = requestedIndex + 1;
+
+    if (nextIndex >= galleryFiles.length) {
+      galleryImage.style.display = "none";
+      placeholder.style.display = "flex";
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === requestedIndex);
+      });
+
+      return;
+    }
+
+    showGalleryImage(nextIndex);
+  };
+
+  candidate.src = galleryFiles[requestedIndex];
 }
-document.querySelector(".gallery-arrow.prev").addEventListener("click", () => showGalleryImage(galleryIndex - 1));
-document.querySelector(".gallery-arrow.next").addEventListener("click", () => showGalleryImage(galleryIndex + 1));
+
+document.querySelector(".gallery-arrow.prev")
+  .addEventListener("click", () => {
+    showGalleryImage(galleryIndex - 1);
+  });
+
+document.querySelector(".gallery-arrow.next")
+  .addEventListener("click", () => {
+    showGalleryImage(galleryIndex + 1);
+  });
+
+// Carga la primera imagen al abrir la página.
+showGalleryImage(0);
