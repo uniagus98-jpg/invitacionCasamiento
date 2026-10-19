@@ -19,7 +19,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 0; }
-body { margin: 0; width: 100%; min-width: 320px; background: #e7e2d8; color: var(--ink); font-family: 'Montserrat', sans-serif; font-weight: 300; overflow-x: hidden; }
+body { margin: 0; width: 100%; min-width: 0; background: #e7e2d8; color: var(--ink); font-family: 'Montserrat', sans-serif; font-weight: 300; overflow-x: clip; }
 button, input, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 .invitation { width: 100%; max-width: 760px; margin: 0 auto; background: var(--ivory); overflow: clip; position: relative; box-shadow: 0 0 55px #514b4030; }
@@ -119,7 +119,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .modal.open .modal-panel { transform: translateY(0); }
 .modal-panel h2 { font-size: 2.8rem; margin-bottom: 20px; }
 .modal-panel p { line-height: 1.8; font-size: .92rem; }
-.close { position: absolute; top: 10px; right: 17px; border: 0; background: transparent; color: var(--gold-dark); font-size: 2rem; cursor: pointer; line-height: 1; }
+.close { position: absolute; top: 10px; right: 17px; min-width: 44px; min-height: 44px; border: 0; background: transparent; color: var(--gold-dark); font-size: 2rem; cursor: pointer; line-height: 1; }
 .close-action { margin-top: 10px; }
 .gift-data { padding: 20px; background: #f5f1e8; border-radius: 12px; line-height: 1.6; overflow-wrap: anywhere; }
 .local-form { display: grid; gap: 15px; text-align: left; margin-top: 22px; }
@@ -130,7 +130,9 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .toast { position: fixed; z-index: 40; bottom: 22px; left: 50%; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; background: #393630; color: white; padding: 13px 18px; border-radius: 12px; width: max-content; max-width: calc(100% - 32px); font-size: .83rem; transition: .2s; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 @media (max-width: 540px) {
-  .hero { min-height: 0; padding: 90px 18px; }
+  html { scroll-snap-type: y mandatory; }
+  .hero, .section, .footer { scroll-snap-align: start; scroll-snap-stop: always; }
+  .hero { min-height: 100svh; padding: 90px 18px; }
   .hero .intro { max-width: 300px; }
   .names { font-size: clamp(4rem, 18vw, 5.2rem); margin: 6px 0 16px; }
   .countdown { width: 100%; max-width: 350px; gap: clamp(7px, 2.5vw, 14px); }
@@ -143,9 +145,9 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .event-date { gap: 8px; }
   .event-date span { font-size: .73rem; }
   .event-date strong { font-size: clamp(4rem, 19vw, 5rem); }
-  .gallery { width: 100%; gap: 3px; }
-  .gallery-frame { width: min(78%, 340px); border-width: 7px; }
-  .gallery-arrow { font-size: 2rem; }
+  .gallery { display: grid; grid-template-columns: 44px minmax(0, 340px) 44px; width: 100%; gap: 6px; justify-content: center; }
+  .gallery-frame { width: 100%; border-width: 7px; }
+  .gallery-arrow { display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0; font-size: 2rem; }
   .details-section { min-height: auto; gap: 18px; padding: 42px 15px 55px; }
   .detail-card { min-height: 0; padding: 28px 20px; border-radius: 18px; }
   .detail-card h2 { font-size: clamp(2rem, 9vw, 2.5rem); }
@@ -154,7 +156,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .modal { padding: 12px; }
   .modal-panel { width: 100%; max-height: calc(100svh - 24px); padding: 44px 20px 26px; border-radius: 22px; }
   .modal-panel h2 { font-size: 2.5rem; }
-  .footer { min-height: 0; padding: 90px 20px; }
+  .footer { min-height: 100svh; padding: 90px 20px; }
   .floral { height: 80px; background-size: auto 200%; background-position: center bottom; }
   .footer h2 { font-size: clamp(5rem, 20vw, 6rem); }
 }
