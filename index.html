@@ -1,26 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenida</title>
-    <link rel="icon" href="img/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/presentacion.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>Nuestra celebración</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="contenedor">
-        <div class="welcome-container">
-            <h1>Mis XV<br>Mia Valentina</h1>
-            <p class="animated">Hay momentos que se sueñan e imaginan, se crean día a día.</p>
-            <p class="animated">Hoy es tiempo de compartir lo soñado.</p>
-            <p class="animated">Es ahí donde necesito de tu magia para que juntos logremos que mi noche explote de emoción, diversión y brillos.</p>
-            <a href="invitacion.html" class="btn">Ingresar</a>
+  <main class="invitation">
+    <div class="floral floral-top" aria-hidden="true"></div>
+    <header class="hero" id="inicio">
+      <p class="eyebrow">TENEMOS ALGO QUE CELEBRAR</p>
+      <h1>Una historia<br><em>de amor</em></h1>
+      <p class="intro">Nos encantaría compartir este día tan especial con vos.</p>
+      <div class="names">Lucía <span>&</span> Mateo</div>
+      <div class="countdown" aria-label="Cuenta regresiva">
+        <div><strong id="days">00</strong><span>Días</span></div>
+        <i></i>
+        <div><strong id="hours">00</strong><span>Horas</span></div>
+        <i></i>
+        <div><strong id="minutes">00</strong><span>Min</span></div>
+        <i></i>
+        <div><strong id="seconds">00</strong><span>Seg</span></div>
+      </div>
+      <p class="date-line">SÁBADO · 8 DE AGOSTO · 2027</p>
+      <a class="button button-solid" href="#celebracion">Ver invitación <span>↓</span></a>
+    </header>
+
+    <section class="section celebration" id="celebracion">
+      <div class="section-icon" aria-hidden="true">♧</div>
+      <p class="eyebrow">NOS CASAMOS</p>
+      <h2>Celebración</h2>
+      <div class="event-card">
+        <p class="month">AGOSTO</p>
+        <div class="event-date"><span>SÁBADO</span><strong>08</strong><span>17:00 HS</span></div>
+        <p class="year">2027</p>
+        <h3>Salón Exclu</h3>
+        <p class="muted">Una noche para celebrar, brindar y bailar juntos.</p>
+        <button class="button button-solid" data-modal="locationModal">¿Cómo llegar?</button>
+      </div>
+    </section>
+
+    <section class="section gallery-section">
+      <p class="eyebrow">NUESTROS MOMENTOS</p>
+      <h2>Retratos de nuestro<br>amor</h2>
+      <p class="subtitle">La clave es disfrutar cada momento.</p>
+      <div class="gallery">
+        <button class="gallery-arrow prev" aria-label="Foto anterior">‹</button>
+        <div class="gallery-frame">
+          <img id="galleryImage" src="img/foto1.jpg" alt="Foto de la pareja">
+          <div class="photo-placeholder" id="photoPlaceholder">
+            <span>♡</span><p>Reemplazá esta imagen por una foto de ustedes</p>
+          </div>
         </div>
-    </div>
-    
-    <script src="js/presentacion.js"></script>
+        <button class="gallery-arrow next" aria-label="Foto siguiente">›</button>
+      </div>
+      <div class="dots"><span class="active"></span><span></span><span></span></div>
+    </section>
+
+    <section class="section details-section">
+      <div class="detail-card">
+        <div class="section-icon">♫</div>
+        <h2>Música</h2>
+        <p>¿Cuál es la canción que no puede faltar en la lista de reproducción de la fiesta?</p>
+        <button class="button button-solid" data-modal="musicModal">Sugerir canción</button>
+      </div>
+      <div class="detail-card">
+        <div class="section-icon">✧</div>
+        <h2>Dress Code</h2>
+        <p>Queremos que te sientas cómodo/a y elegante para compartir esta noche con nosotros.</p>
+        <button class="button button-outline" data-modal="dressModal">Ver dress code</button>
+      </div>
+      <div class="detail-card">
+        <div class="section-icon">♡</div>
+        <h2>Regalos</h2>
+        <p>Tu presencia es nuestro mejor regalo. Si además querés hacernos un obsequio, acá te dejamos algunas opciones.</p>
+        <button class="button button-solid" data-modal="giftModal">Información para regalos</button>
+      </div>
+      <div class="detail-card rsvp-card">
+        <div class="section-icon">✉</div>
+        <h2>¿Nos acompañás?</h2>
+        <p>Confirmá tu asistencia antes del 20 de julio.</p>
+        <button class="button button-solid" data-modal="rsvpModal">Confirmar asistencia</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="heart">♥</div>
+      <p>¡Te esperamos!</p>
+      <h2>Lucía <span>&</span> Mateo</h2>
+      <small>Con amor, para siempre.</small>
+    </footer>
+    <div class="floral floral-bottom" aria-hidden="true"></div>
+  </main>
+
+  <!-- Ventanas internas: no abren pestañas externas -->
+  <div class="modal" id="locationModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="locationTitle">
+    <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">⌖</div><h2 id="locationTitle">¿Cómo llegar?</h2><p><strong>Salón Exclu</strong><br>Dirección del salón, Ciudad.</p><p class="muted">Dirección: agregá acá la calle, número y ciudad del salón.</p><button class="button button-solid close-action">Cerrar</button></div>
+  </div>
+  <div class="modal" id="musicModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="musicTitle">
+    <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">♫</div><h2 id="musicTitle">Sugerir canción</h2><p>¿Qué canción te gustaría escuchar en la fiesta?</p><form class="local-form" data-message="¡Gracias por sugerir una canción!"><label>Nombre de la canción<input required name="song" placeholder="Canción y artista"></label><label>Tu nombre<input required name="guest" placeholder="¿Quién la sugiere?"></label><button class="button button-solid" type="submit">Enviar sugerencia</button></form><p class="form-note">Este formulario es una maqueta: conectalo a un servicio o backend para recibir respuestas.</p></div>
+  </div>
+  <div class="modal" id="dressModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
+    <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">✧</div><h2 id="dressTitle">Dress Code</h2><p><strong>Elegante / formal</strong></p><p>Elegí tu mejor look para acompañarnos. Te pedimos evitar el blanco y los tonos muy similares al vestido de la novia.</p><button class="button button-outline close-action">Entendido</button></div>
+  </div>
+  <div class="modal" id="giftModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="giftTitle">
+    <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">♧</div><h2 id="giftTitle">Regalos</h2><p>Para quienes deseen hacernos un regalo en efectivo, habrá sobres disponibles en el salón. También pueden contribuir mediante:</p><div class="gift-data"><strong>Transferencia bancaria</strong><br>Alias: <code>lucia.mateo.regalo</code><br><br><strong>Otra opción</strong><br>Agregá acá los datos que quieras compartir.</div><button class="button button-outline close-action">Cerrar</button></div>
+  </div>
+  <div class="modal" id="rsvpModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+    <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">♡</div><h2 id="rsvpTitle">Confirmar asistencia</h2><p>¡Nos alegra que quieras acompañarnos!</p><form class="local-form" data-message="¡Gracias! Tu respuesta quedó registrada en esta demostración."><label>Nombre y apellido<input required name="name" placeholder="Tu nombre"></label><label>¿Vas a asistir?<select required name="attendance"><option value="">Elegí una opción</option><option>Sí, ahí estaré</option><option>No podré asistir</option></select></label><label>¿Cuántas personas?<select name="people"><option>1</option><option>2</option><option>3</option><option>4</option></select></label><button class="button button-solid" type="submit">Enviar confirmación</button></form><p class="form-note">Para recibir confirmaciones reales, conectá este formulario a un backend o servicio de formularios.</p></div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-

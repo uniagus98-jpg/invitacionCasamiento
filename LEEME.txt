@@ -1,0 +1,21 @@
+INVITACIÓN DIGITAL - BASE HTML/CSS/JS
+
+Archivos:
+- index.html: contenido y ventanas internas.
+- style.css: estilos, colores y adaptación a celular.
+- script.js: contador, ventanas, formularios de demostración y galería.
+- img/ornamento-floral.svg: decoración floral vectorial.
+
+Cómo probar:
+1. Descomprimí la carpeta.
+2. Abrí index.html en un navegador.
+3. Para personalizar, editá los nombres, fecha, horario, salón, dirección y textos en index.html.
+4. Cambiá la fecha del contador en script.js (formato AAAA-MM-DDTHH:MM:SS).
+5. Copiá tus fotos a img/ y nombrá foto1.jpg, foto2.jpg y foto3.jpg.
+
+Importante:
+- Los formularios muestran una confirmación de demostración, pero no envían datos a ningún lado. Para recibir respuestas reales hay que conectarlos a un backend o servicio de formularios.
+- Todos los botones de contenido abren ventanas dentro de la misma página y se cierran con la X. No se abren pestañas externas.
+- Las tipografías de Google Fonts requieren conexión a internet; hay fuentes alternativas por si no cargan.
+
+Diseño responsive actualizado: usa unidades de viewport dinámicas para móviles, evita desbordamiento horizontal, presenta tarjetas en una sola columna y alterna fondos marfil, beige y una sección oscura tipo fotografía.

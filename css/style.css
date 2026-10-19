@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Roboto:wght@100;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
         body {
-            font-family: 'Crimson Text', serif;
+            font-family: "Pinyon Script";
             margin: 0;
             padding: 0;
             background: #FFFFFF;
@@ -71,7 +70,7 @@
 
         /* titulos */
         .section h1 {
-            font-size: 3em;
+            font-size: 5em;
             color: #FFFFFF;
             font-weight: 600;
         }
@@ -92,7 +91,7 @@
         }
 
         .section p {
-            font-family: 'Crimson Text', sans-serif;
+            font-family: 'Pinyon Script', sans-serif;
             font-size: 2rem;
         }
 
