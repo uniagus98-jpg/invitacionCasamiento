@@ -130,9 +130,9 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .toast { position: fixed; z-index: 40; bottom: 22px; left: 50%; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; background: #393630; color: white; padding: 13px 18px; border-radius: 12px; width: max-content; max-width: calc(100% - 32px); font-size: .83rem; transition: .2s; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 @media (max-width: 540px) {
-  .hero { min-height: 100vh; min-height: 100svh; padding: 78px 18px 72px; }
+  .hero { min-height: 0; padding: 70px 18px; }
   .hero .intro { max-width: 300px; }
-  .names { font-size: clamp(3rem, 13vw, 4rem); margin: 12px 0 24px; }
+  .names { font-size: clamp(4rem, 18vw, 5.2rem); margin: 6px 0 16px; }
   .countdown { width: 100%; max-width: 350px; gap: clamp(7px, 2.5vw, 14px); }
   .countdown div { min-width: 0; flex: 1; }
   .countdown strong { font-size: clamp(1.65rem, 7.5vw, 2.4rem); }
@@ -154,9 +154,9 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .modal { padding: 12px; }
   .modal-panel { width: 100%; max-height: calc(100svh - 24px); padding: 44px 20px 26px; border-radius: 22px; }
   .modal-panel h2 { font-size: 2.5rem; }
-  .footer { min-height: 55vh; min-height: 55svh; padding: 65px 20px; }
-  .floral { height: 86px; background-size: auto 220%; background-position: center 75%; }
-  .footer h2 { font-size: clamp(4rem, 16vw, 5rem); }
+  .footer { min-height: 0; padding: 70px 20px; }
+  .floral { height: 100px; background-size: auto 260%; background-position: center 70%; }
+  .footer h2 { font-size: clamp(5rem, 20vw, 6rem); }
 }
 @media (max-width: 360px) {
   .hero { padding-left: 12px; padding-right: 12px; }
