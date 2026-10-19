@@ -23,10 +23,38 @@ body { margin: 0; width: 100%; min-width: 320px; background: #e7e2d8; color: var
 button, input, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 .invitation { width: 100%; max-width: 760px; margin: 0 auto; background: var(--ivory); overflow: clip; position: relative; box-shadow: 0 0 55px #514b4030; }
-.floral { height: 95px; background-image: url("img/arreglofloral.png"); background-position: center; background-size: auto 100%; background-repeat: repeat-x; position: relative; z-index: 1; }
-.floral-top { position: absolute; top: 0; left: 0; right: 0; margin: 0; height: clamp(58px, 12vh, 95px); pointer-events: none; }
-.floral-bottom { margin-top: -16px; transform: rotate(180deg); }
-.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(100px, 15vh, 145px) 22px 36px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, #fffefa 0%, var(--ivory) 68%); }
+.floral {
+  width: 100%;
+  height: clamp(90px, 16vw, 140px);
+
+  background-image: url("img/arreglofloral.png");
+  background-repeat: repeat-x;
+  /* El PNG tiene bastante margen vacío arriba y abajo; ampliarlo y alinearlo
+     al borde acerca las flores al extremo de cada sección. */
+  background-position: center bottom;
+  background-size: auto 200%;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floral-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.floral-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.hero, .footer { position: relative; }
+.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: 100px 22px 90px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, #fffefa 0%, var(--ivory) 68%); }
 .eyebrow { font-size: .68rem; letter-spacing: .24em; font-weight: 500; color: var(--gold-dark); margin: 0 0 17px; }
 h1, h2, h3, .countdown strong, .event-date strong { font-family: 'Crimson Text', Georgia, serif; }
 .names, .footer h2{ font-family: 'fuente';}
@@ -80,7 +108,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .detail-card .button { width: 100%; padding: 13px 10px; font-size: .75rem; }
 .detail-card:nth-child(even) { background: #f0ece3; }
 .rsvp-card { background: #e7decb !important; }
-.footer { min-height: 65vh; min-height: 65svh; text-align: center; padding: 55px 20px 75px; background: #e6dece; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.footer { min-height: 65vh; min-height: 65svh; text-align: center; padding: 85px 20px; background: var(--ivory); display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .heart { color: var(--gold); font-size: 2rem; }
 .footer p { font-family: 'Crimson Text', Georgia, serif; font-size: 1.6rem; color: var(--gold-dark); }
 .footer h2 { font-size: 3.6rem; margin: 10px 0; font-weight: 400;}
@@ -102,7 +130,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .toast { position: fixed; z-index: 40; bottom: 22px; left: 50%; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; background: #393630; color: white; padding: 13px 18px; border-radius: 12px; width: max-content; max-width: calc(100% - 32px); font-size: .83rem; transition: .2s; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 @media (max-width: 540px) {
-  .hero { min-height: 100vh; min-height: 100svh; padding: 100px 18px 30px; }
+  .hero { min-height: 100vh; min-height: 100svh; padding: 78px 18px 72px; }
   .hero .intro { max-width: 300px; }
   .names { font-size: clamp(1.9rem, 8vw, 2.3rem); }
   .countdown { width: 100%; max-width: 350px; gap: clamp(7px, 2.5vw, 14px); }
@@ -126,7 +154,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .modal { padding: 12px; }
   .modal-panel { width: 100%; max-height: calc(100svh - 24px); padding: 44px 20px 26px; border-radius: 22px; }
   .modal-panel h2 { font-size: 2.5rem; }
-  .footer { min-height: 55vh; min-height: 55svh; }
+  .footer { min-height: 55vh; min-height: 55svh; padding: 65px 20px; }
   .floral { height: 65px; }
 }
 @media (max-width: 360px) {
