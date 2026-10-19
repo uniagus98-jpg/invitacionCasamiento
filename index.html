@@ -43,20 +43,21 @@
         <p class="month">DICIEMBRE</p>
         <div class="event-date"><span>SÁBADO</span><strong>05</strong><span>17:00 HS</span></div>
         <p class="year">2026</p>
-        <h3>Salón Exclu</h3>
+        <h3>Salón Amedea</h3>
         <p class="muted">Una noche para celebrar, brindar y bailar juntos.</p>
-        <button class="button button-solid" data-modal="locationModal">¿Cómo llegar?</button>
+        <a class="button button-solid" href="https://www.google.com/maps/search/?api=1&amp;query=Sal%C3%B3n+Amedea%2C+Perito+Moreno+677%2C+Neuqu%C3%A9n" target="_blank" rel="noopener noreferrer" aria-label="Abrir Salón Amedea en Google Maps">¿Cómo llegar?</a>
       </div>
+      <a class="section-next" href="#momentos" aria-label="Ver la siguiente sección">Deslizá para ver más <span aria-hidden="true">↓</span></a>
     </section>
 
-    <section class="section gallery-section">
+    <section class="section gallery-section" id="momentos">
       <p class="eyebrow">NUESTROS MOMENTOS</p>
       <h2>Retratos de nuestro<br>amor</h2>
       <p class="subtitle">La clave es disfrutar cada momento.</p>
       <div class="gallery">
         <button class="gallery-arrow prev" aria-label="Foto anterior">‹</button>
         <div class="gallery-frame">
-          <img id="galleryImage" src="img/foto1.jpg" alt="Foto de la pareja">
+          <img id="galleryImage" src="img/foto1.webp" alt="Foto de la pareja">
           <div class="photo-placeholder" id="photoPlaceholder">
             <span>♡</span><p>Reemplazá esta imagen por una foto de ustedes</p>
           </div>
@@ -104,9 +105,6 @@
   </main>
 
   <!-- Ventanas internas: no abren pestañas externas -->
-  <div class="modal" id="locationModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="locationTitle">
-    <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">⌖</div><h2 id="locationTitle">¿Cómo llegar?</h2><p><strong>Salón Exclu</strong><br>Dirección del salón, Ciudad.</p><p class="muted">Dirección: agregá acá la calle, número y ciudad del salón.</p><button class="button button-solid close-action">Cerrar</button></div>
-  </div>
   <div class="modal" id="musicModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="musicTitle">
     <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">♫</div><h2 id="musicTitle">Sugerir canción</h2><p>¿Qué canción te gustaría escuchar en la fiesta?</p><form class="local-form" data-message="¡Gracias por sugerir una canción!"><label>Nombre de la canción<input required name="song" placeholder="Canción y artista"></label><label>Tu nombre<input required name="guest" placeholder="¿Quién la sugiere?"></label><button class="button button-solid" type="submit">Enviar sugerencia</button></form><p class="form-note">Este formulario es una maqueta: conectalo a un servicio o backend para recibir respuestas.</p></div>
   </div>

@@ -85,6 +85,9 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .event-card h3 { font-size: 1.7rem; margin: 26px 0 5px; }
 .muted { color: var(--muted); line-height: 1.7; font-size: .88rem; }
 .event-card .button { margin-top: 14px; min-width: 190px; }
+.section-next { min-height: 44px; margin-top: 18px; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: var(--gold-dark); font-size: .72rem; letter-spacing: .1em; text-decoration: none; }
+.section-next span { font-size: 1.3rem; line-height: 1; }
+.section-next:hover span { transform: translateY(3px); }
 .gallery-section { position: relative; isolation: isolate; padding-bottom: 65px; background: linear-gradient(160deg, rgba(44, 42, 36, .76), rgba(72, 66, 53, .80)), radial-gradient(ellipse at 20% 20%, #b8a47c 0%, #77715f 35%, #393830 100%); color: #fffdf8; }
 .gallery-section h2 { color: #d2bd91; }
 .gallery-section .eyebrow { color: #d8c9a8; }

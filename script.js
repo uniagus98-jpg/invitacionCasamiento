@@ -70,9 +70,9 @@ document.querySelectorAll(".local-form").forEach(form => {
 // y cambiá los nombres de este arreglo. Sin fotos cargadas se muestra el placeholder.
 // Galería: cambia la foto solo cuando la imagen solicitada cargó correctamente.
 const galleryFiles = [
-  "img/foto1.jpg",
-  "img/foto2.jpg",
-  "img/foto3.jpg"
+  "img/foto1.webp",
+  "img/foto2.webp",
+  "img/foto3.webp"
 ];
 
 let galleryIndex = 0;

@@ -11,7 +11,7 @@ Cómo probar:
 2. Abrí index.html en un navegador.
 3. Para personalizar, editá los nombres, fecha, horario, salón, dirección y textos en index.html.
 4. Cambiá la fecha del contador en script.js (formato AAAA-MM-DDTHH:MM:SS).
-5. Copiá tus fotos a img/ y nombrá foto1.jpg, foto2.jpg y foto3.jpg.
+5. Copiá tus fotos optimizadas a img/ y nombrá foto1.webp, foto2.webp y foto3.webp.
 
 Importante:
 - Los formularios muestran una confirmación de demostración, pero no envían datos a ningún lado. Para recibir respuestas reales hay que conectarlos a un backend o servicio de formularios.
