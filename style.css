@@ -54,7 +54,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .hero, .footer { position: relative; }
-.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(104px, 13vh, 130px) 22px clamp(80px, 10vh, 100px); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; background: radial-gradient(ellipse at center, #fffefa 0%, var(--ivory) 68%); }
+.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(104px, 13vh, 130px) 22px clamp(80px, 10vh, 100px); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-around; background: radial-gradient(ellipse at center, #fffefa 0%, var(--ivory) 68%); }
 .eyebrow { font-size: .68rem; letter-spacing: .24em; font-weight: 500; color: var(--gold-dark); margin: 0 0 17px; }
 h1, h2, h3, .countdown strong, .event-date strong { font-family: 'Crimson Text', Georgia, serif; }
 .names, .footer h2{ font-family: 'fuente';}
