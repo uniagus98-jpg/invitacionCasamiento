@@ -92,17 +92,19 @@ h1 em { font-weight: 400; }
 .countdown-section .countdown { width: min(100%, 540px); margin: 4px 0 0; padding: 24px 20px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255, 254, 250, .72); box-shadow: 0 12px 32px rgba(62, 52, 35, .08); }
 .countdown-section .countdown div { flex: 1; min-width: 0; }
 .countdown-section .countdown strong { color: var(--gold-dark); }
-.celebration { gap: clamp(9px, 1.8vh, 15px); background: linear-gradient(145deg, #eee8dc 0%, #e2d6bf 100%); }
+.celebration { gap: clamp(12px, 2vh, 18px); background: linear-gradient(145deg, #eee8dc 0%, #e2d6bf 100%); }
 .celebration h2 { margin: 0; }
 .celebration-rings { display: block; width: clamp(92px, 16vw, 120px); height: auto; object-fit: contain; margin: 0 auto; }
 .section-icon { color: var(--gold); font-size: 2.5rem; line-height: 1; margin-bottom: 13px; font-family: Georgia, serif; }
 h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; font-weight: 600; margin: 0 0 24px; }
 .event-card { max-width: 500px; margin: 0 auto; background: var(--paper); border: 1px solid var(--line); border-radius: 25px; padding: 36px 20px; box-shadow: var(--shadow); }
-.celebration .event-card { padding: 38px 20px; }
+.celebration .event-card { padding: 44px 20px; }
 .celebration .month, .celebration .year { margin: 0; }
-.celebration .event-date { margin-top: 12px; }
-.celebration .event-card h3 { margin: 16px 0 4px; }
-.celebration .event-card .button { margin-top: 10px; }
+.celebration .year { font-size: 1.08rem; }
+.celebration .event-date { margin-top: 16px; }
+.celebration .event-date span { font-size: 1rem; }
+.celebration .event-card h3 { margin: 20px 0 6px; }
+.celebration .event-card .button { margin-top: 14px; }
 .month, .year { color: var(--gold-dark); letter-spacing: .28em; font-family: 'Crimson Text', Georgia, serif; }
 .event-date { display: grid; grid-template-columns: 1fr auto 1fr; gap: 15px; align-items: center; margin: 18px 0 0; }
 .event-date span { border-top: 1px solid var(--ink); padding-top: 9px; font-family: 'Crimson Text', Georgia, serif; color: var(--gold-dark); font-size: .92rem; }
@@ -198,7 +200,11 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .event-card { width: 100%; padding: 30px 15px; border-radius: 20px; }
   .celebration { padding-top: 38px; padding-bottom: 38px; }
   .celebration-rings { width: clamp(82px, 23vw, 96px); }
-  .celebration .event-card { padding: 31px 15px; }
+  .celebration .event-card { padding: 37px 15px; }
+  .celebration .year { font-size: 1.05rem; }
+  .celebration .event-date { margin-top: 14px; }
+  .celebration .event-date span { font-size: .84rem; }
+  .celebration .event-card h3 { margin-top: 18px; }
   .event-date { gap: 8px; }
   .event-date span { font-size: .73rem; }
   .event-date strong { font-size: clamp(4rem, 19vw, 5rem); }
