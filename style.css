@@ -81,7 +81,7 @@ h1 em { font-weight: 400; }
 .hero-down svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .hero-down:hover { transform: translateY(3px); box-shadow: 0 8px 20px rgba(62, 52, 35, .14), inset 0 1px rgba(255, 255, 255, .9); color: var(--gold); }
 .hero-down:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; border-radius: 50%; }
-.hero > .hero-down { position: absolute; z-index: 2; left: 50%; bottom: 24px; translate: -50% 0; }
+.hero > .hero-down { position: absolute; z-index: 2; left: 50%; bottom: 38px; translate: -50% 0; }
 .button { cursor: pointer; border-radius: 7px; border: 1px solid var(--gold); padding: 14px 24px; display: inline-flex; justify-content: center; align-items: center; gap: 12px; text-decoration: none; text-align: center; transition: .2s ease; font-size: .85rem; font-weight: 500; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #9e895e2b; }
 .button-solid { background: linear-gradient(135deg, #c7b38a, #ad976c); color: white; }
@@ -184,6 +184,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   html { scroll-snap-type: y mandatory; }
   .hero, .section, .footer { scroll-snap-align: start; scroll-snap-stop: always; }
   .hero { min-height: 100svh; padding: 94px 18px 78px; }
+  .hero > .hero-down { bottom: 50px; }
   .hero .intro { max-width: 310px; margin: 0; font-size: 1.05rem; line-height: 1.7; }
   .names { height: clamp(152px, 42vw, 180px); }
   .names .name-first, .names .name-second { font-size: clamp(3.7rem, 16vw, 4.3rem); }
