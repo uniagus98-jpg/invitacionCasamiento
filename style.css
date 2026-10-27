@@ -92,7 +92,7 @@ h1 em { font-weight: 400; }
 .countdown-section .countdown strong { color: var(--gold-dark); }
 .celebration { background: linear-gradient(145deg, #eee8dc 0%, #e2d6bf 100%); }
 .celebration h2 { margin: 0 0 5px; }
-.celebration-rings { display: block; width: clamp(130px, 24vw, 178px); height: auto; object-fit: contain; margin: 0 auto 10px; }
+.celebration-rings { display: block; width: clamp(105px, 18vw, 132px); height: auto; object-fit: contain; margin: 0 auto 8px; }
 .section-icon { color: var(--gold); font-size: 2.5rem; line-height: 1; margin-bottom: 13px; font-family: Georgia, serif; }
 h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; font-weight: 600; margin: 0 0 24px; }
 .event-card { max-width: 500px; margin: 0 auto; background: var(--paper); border: 1px solid var(--line); border-radius: 25px; padding: 36px 20px; box-shadow: var(--shadow); }
@@ -186,7 +186,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .section { min-height: 100vh; min-height: 100svh; padding: 58px 18px; }
   .event-card { width: 100%; padding: 30px 15px; border-radius: 20px; }
   .celebration { padding-top: 38px; padding-bottom: 38px; }
-  .celebration-rings { width: clamp(125px, 36vw, 158px); margin-bottom: 8px; }
+  .celebration-rings { width: clamp(96px, 27vw, 112px); margin-bottom: 6px; }
   .celebration .event-card { padding: 25px 15px; }
   .event-date { gap: 8px; }
   .event-date span { font-size: .73rem; }
