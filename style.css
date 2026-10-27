@@ -54,21 +54,31 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .hero, .footer { position: relative; }
-.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: 100px 22px 90px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, #fffefa 0%, var(--ivory) 68%); }
+.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(104px, 13vh, 130px) 22px clamp(80px, 10vh, 100px); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; background: radial-gradient(ellipse at center, #fffefa 0%, var(--ivory) 68%); }
 .eyebrow { font-size: .68rem; letter-spacing: .24em; font-weight: 500; color: var(--gold-dark); margin: 0 0 17px; }
 h1, h2, h3, .countdown strong, .event-date strong { font-family: 'Crimson Text', Georgia, serif; }
 .names, .footer h2{ font-family: 'fuente';}
 h1 { color: var(--gold); font-size: clamp(2.5rem, 12vw, 4rem); line-height: .82; font-weight: 600; margin: 0 0 24px; }
 h1 em { font-weight: 400; }
 .intro { max-width: 340px; line-height: 1.8; font-size: .94rem; }
-.names { font-size: 3.5rem; color: var(--gold-dark); margin: 16px 0 30px; }
-.names span, .footer h2 span { font-style: italic; color: var(--gold); }
+.names { position: relative; width: min(100%, 480px); height: clamp(170px, 34vw, 240px); flex: 0 0 auto; color: var(--gold-dark); margin: 0; }
+.names span { position: absolute; font-family: 'fuente'; line-height: 1; white-space: nowrap; }
+.names .name-first, .names .name-second { font-size: clamp(4.5rem, 14vw, 7rem); }
+.names .name-first { top: 0; left: 0; }
+.names .name-ampersand { top: 43%; left: 51%; transform: translate(-50%, -50%); font-size: clamp(2.6rem, 7vw, 4rem); font-style: italic; color: var(--gold); }
+.names .name-second { right: 0; bottom: 0; }
+.footer h2 span { font-style: italic; color: var(--gold); }
 .countdown { display: flex; align-items: stretch; justify-content: center; gap: clamp(9px, 3vw, 24px); margin: 4px 0 28px; }
 .countdown div { min-width: 52px; display: flex; flex-direction: column; gap: 5px; }
 .countdown strong { font-size: clamp(1.8rem, 7vw, 3rem); line-height: 1; font-weight: 600; }
 .countdown span { font-family: 'Crimson Text', Georgia, serif; color: var(--gold-dark); font-size: 1.05rem; }
 .countdown i { width: 1px; background: var(--line); }
 .date-line { letter-spacing: .17em; font-size: .7rem; margin: 0 0 26px; }
+.hero .date-line { margin: 0; padding: 0 10px 7px; border-bottom: 1px solid var(--gold); color: var(--gold-dark); font-size: .82rem; letter-spacing: .22em; }
+.hero-down { width: 48px; height: 48px; display: grid; place-items: center; color: var(--gold-dark); text-decoration: none; transition: transform .2s ease, color .2s ease; }
+.hero-down svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.hero-down:hover { transform: translateY(4px); color: var(--gold); }
+.hero-down:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; border-radius: 50%; }
 .button { cursor: pointer; border-radius: 7px; border: 1px solid var(--gold); padding: 14px 24px; display: inline-flex; justify-content: center; align-items: center; gap: 12px; text-decoration: none; text-align: center; transition: .2s ease; font-size: .85rem; font-weight: 500; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #9e895e2b; }
 .button-solid { background: linear-gradient(135deg, #c7b38a, #ad976c); color: white; }
@@ -150,9 +160,10 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 @media (max-width: 540px) {
   html { scroll-snap-type: y mandatory; }
   .hero, .section, .footer { scroll-snap-align: start; scroll-snap-stop: always; }
-  .hero { min-height: 100svh; padding: 90px 18px; }
+  .hero { min-height: 100svh; padding: 94px 18px 78px; }
   .hero .intro { max-width: 300px; }
-  .names { font-size: clamp(4rem, 18vw, 5.2rem); margin: 6px 0 16px; }
+  .names { width: min(100%, 400px); height: clamp(170px, 48vw, 210px); }
+  .names .name-first, .names .name-second { font-size: clamp(4.5rem, 18vw, 6rem); }
   .countdown { width: 100%; max-width: 350px; gap: clamp(7px, 2.5vw, 14px); }
   .countdown div { min-width: 0; flex: 1; }
   .countdown strong { font-size: clamp(1.65rem, 7.5vw, 2.4rem); }
