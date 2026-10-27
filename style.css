@@ -61,7 +61,7 @@ h1, h2, h3, .countdown strong, .event-date strong { font-family: 'Crimson Text',
 h1 { color: var(--gold); font-size: clamp(2.5rem, 12vw, 4rem); line-height: .82; font-weight: 600; margin: 0 0 24px; }
 h1 em { font-weight: 400; }
 .intro { max-width: 340px; line-height: 1.8; font-size: .94rem; }
-.hero .intro::before { content: ""; display: block; width: clamp(100px, 32vw, 150px); height: 1px; margin: 0 auto 16px; background: var(--line); }
+.hero .intro::before { content: ""; display: block; width: var(--hero-divider-width); height: 1px; margin: 0 auto 16px; background: var(--line); }
 .names { position: relative; width: min(100%, 300px); height: clamp(160px, 30vw, 210px); flex: 0 0 auto; color: var(--gold-dark); margin: 0; }
 .names span { position: absolute; font-family: 'fuente'; line-height: 1; white-space: nowrap; }
 .names .name-first, .names .name-second { font-size: clamp(5rem, 9vw, 6rem); }
@@ -75,7 +75,8 @@ h1 em { font-weight: 400; }
 .countdown span { font-family: 'Crimson Text', Georgia, serif; color: var(--gold-dark); font-size: 1.05rem; }
 .countdown i { width: 1px; background: var(--line); }
 .date-line { letter-spacing: .17em; font-size: .7rem; margin: 0 0 26px; }
-.hero .date-line { width: clamp(190px, 60vw, 300px); margin: 0; padding: 0 10px 8px; border-bottom: 1px solid var(--gold); color: var(--gold-dark); font-size: clamp(1.25rem, 3vw, 1.5rem); letter-spacing: .2em; text-align: center; }
+.hero { --hero-divider-width: clamp(190px, 60vw, 300px); }
+.hero .date-line { width: var(--hero-divider-width); margin: 0; padding: 0 10px 8px; border-bottom: 1px solid var(--gold); color: var(--gold-dark); font-size: clamp(1.25rem, 3vw, 1.5rem); letter-spacing: .2em; text-align: center; }
 .hero-down { width: 54px; height: 54px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: linear-gradient(145deg, #fffefa, #f1eadc); box-shadow: 0 5px 16px rgba(62, 52, 35, .1), inset 0 1px rgba(255, 255, 255, .9); color: var(--gold-dark); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, color .2s ease; }
 .hero-down svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .hero-down:hover { transform: translateY(3px); box-shadow: 0 8px 20px rgba(62, 52, 35, .14), inset 0 1px rgba(255, 255, 255, .9); color: var(--gold); }
