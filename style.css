@@ -125,8 +125,8 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .gallery-section .hero-down:hover { color: #fffefa; }
 .subtitle { margin: -12px 0 30px; font-size: 1rem; }
 .gallery { display: flex; align-items: center; justify-content: center; gap: 8px; }
-.gallery-frame { width: min(76%, 390px); aspect-ratio: 3 / 4; background: #e6dfd0; border: 9px solid white; box-shadow: 0 8px 25px #00000014; position: relative; overflow: hidden; }
-.gallery-frame img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.gallery-frame { width: min(76%, 390px); aspect-ratio: 3 / 4; background: #e6dfd0; border: 9px solid white; box-shadow: 0 8px 25px #00000014; position: relative; overflow: hidden; touch-action: pan-y; }
+.gallery-frame img { width: 100%; height: 100%; object-fit: cover; display: none; user-select: none; -webkit-user-drag: none; }
 .photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px; color: #9e8e6b; background: linear-gradient(145deg, #eee9dd, #d8d0bf); }
 .photo-placeholder span { font-size: 4rem; }
 .photo-placeholder p { line-height: 1.6; font-size: .8rem; }

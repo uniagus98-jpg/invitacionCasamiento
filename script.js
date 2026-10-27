@@ -78,8 +78,10 @@ const galleryFiles = [
 let galleryIndex = 0;
 const galleryImage = document.getElementById("galleryImage");
 const placeholder = document.getElementById("photoPlaceholder");
+const galleryFrame = document.querySelector(".gallery-frame");
 const dots = [...document.querySelectorAll(".dots span")];
 let galleryRequest = 0;
+let galleryTouchStart = null;
 
 function showGalleryImage(index) {
   galleryIndex = (index + galleryFiles.length) % galleryFiles.length;
@@ -133,6 +135,26 @@ document.querySelector(".gallery-arrow.next")
   .addEventListener("click", () => {
     showGalleryImage(galleryIndex + 1);
   });
+
+galleryFrame.addEventListener("pointerdown", event => {
+  if (event.pointerType !== "touch") return;
+  galleryTouchStart = { x: event.clientX, y: event.clientY };
+});
+
+galleryFrame.addEventListener("pointerup", event => {
+  if (!galleryTouchStart) return;
+
+  const deltaX = event.clientX - galleryTouchStart.x;
+  const deltaY = event.clientY - galleryTouchStart.y;
+  galleryTouchStart = null;
+
+  if (Math.abs(deltaX) < 45 || Math.abs(deltaX) < Math.abs(deltaY) * 1.25) return;
+  showGalleryImage(galleryIndex + (deltaX < 0 ? 1 : -1));
+});
+
+galleryFrame.addEventListener("pointercancel", () => {
+  galleryTouchStart = null;
+});
 
 // Carga la primera imagen al abrir la página.
 showGalleryImage(0);
