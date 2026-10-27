@@ -81,7 +81,7 @@ h1 em { font-weight: 400; }
 .hero-down svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .hero-down:hover { transform: translateY(3px); box-shadow: 0 8px 20px rgba(62, 52, 35, .14), inset 0 1px rgba(255, 255, 255, .9); color: var(--gold); }
 .hero-down:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; border-radius: 50%; }
-.hero > .hero-down { position: absolute; left: 50%; bottom: 24px; translate: -50% 0; }
+.hero > .hero-down { position: absolute; z-index: 2; left: 50%; bottom: 24px; translate: -50% 0; }
 .button { cursor: pointer; border-radius: 7px; border: 1px solid var(--gold); padding: 14px 24px; display: inline-flex; justify-content: center; align-items: center; gap: 12px; text-decoration: none; text-align: center; transition: .2s ease; font-size: .85rem; font-weight: 500; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #9e895e2b; }
 .button-solid { background: linear-gradient(135deg, #c7b38a, #ad976c); color: white; }
