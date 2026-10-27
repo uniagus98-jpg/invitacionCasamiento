@@ -61,7 +61,8 @@ h1, h2, h3, .countdown strong, .event-date strong { font-family: 'Crimson Text',
 h1 { color: var(--gold); font-size: clamp(2.5rem, 12vw, 4rem); line-height: .82; font-weight: 600; margin: 0 0 24px; }
 h1 em { font-weight: 400; }
 .intro { max-width: 340px; line-height: 1.8; font-size: .94rem; }
-.names { position: relative; width: min(100%, 380px); height: clamp(160px, 30vw, 210px); flex: 0 0 auto; color: var(--gold-dark); margin: 0; }
+.hero .intro::before { content: ""; display: block; width: clamp(100px, 32vw, 150px); height: 1px; margin: 0 auto 16px; background: var(--line); }
+.names { position: relative; width: min(100%, 300px); height: clamp(160px, 30vw, 210px); flex: 0 0 auto; color: var(--gold-dark); margin: 0; }
 .names span { position: absolute; font-family: 'fuente'; line-height: 1; white-space: nowrap; }
 .names .name-first, .names .name-second { font-size: clamp(5rem, 9vw, 6rem); }
 .names .name-first { top: 0; left: 6%; }
@@ -162,7 +163,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .hero, .section, .footer { scroll-snap-align: start; scroll-snap-stop: always; }
   .hero { min-height: 100svh; padding: 94px 18px 78px; }
   .hero .intro { max-width: 310px; margin: 0; font-size: 1.05rem; line-height: 1.7; }
-  .names { width: min(100%, 360px); height: clamp(152px, 42vw, 180px); }
+  .names { height: clamp(152px, 42vw, 180px); }
   .names .name-first, .names .name-second { font-size: clamp(3.7rem, 16vw, 4.3rem); }
   .countdown { width: 100%; max-width: 350px; gap: clamp(7px, 2.5vw, 14px); }
   .countdown div { min-width: 0; flex: 1; }
