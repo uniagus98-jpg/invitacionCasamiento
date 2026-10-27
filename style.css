@@ -91,6 +91,8 @@ h1 em { font-weight: 400; }
 .countdown-section .countdown div { flex: 1; min-width: 0; }
 .countdown-section .countdown strong { color: var(--gold-dark); }
 .celebration { background: linear-gradient(145deg, #eee8dc 0%, #e2d6bf 100%); }
+.celebration h2 { margin: 0 0 5px; }
+.celebration-rings { display: block; width: clamp(130px, 24vw, 178px); height: auto; object-fit: contain; margin: 0 auto 10px; }
 .section-icon { color: var(--gold); font-size: 2.5rem; line-height: 1; margin-bottom: 13px; font-family: Georgia, serif; }
 h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; font-weight: 600; margin: 0 0 24px; }
 .event-card { max-width: 500px; margin: 0 auto; background: var(--paper); border: 1px solid var(--line); border-radius: 25px; padding: 36px 20px; box-shadow: var(--shadow); }
@@ -152,6 +154,12 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .modal-panel { position: relative; width: min(100%, 510px); max-height: 88vh; overflow-y: auto; padding: 48px 30px 32px; border: 1px solid var(--line); border-radius: 25px; background: var(--paper); text-align: center; box-shadow: var(--shadow); transform: translateY(12px); transition: transform .22s ease; }
 .modal.open .modal-panel { transform: translateY(0); }
 .modal-panel h2 { font-size: 2.8rem; margin-bottom: 20px; }
+.map-modal-panel { width: min(100%, 780px); padding: 38px 24px 24px; }
+.map-modal-panel .section-icon { margin-bottom: 6px; }
+.map-modal-panel h2 { margin: 0 0 4px; font-size: 2.5rem; }
+.map-modal-panel > p { margin: 0 0 16px; }
+.venue-map { display: block; width: 100%; height: min(52vh, 440px); border: 1px solid var(--line); border-radius: 14px; background: #eee8dc; }
+.map-modal-panel .close-action { margin-top: 16px; }
 .modal-panel p { line-height: 1.8; font-size: .92rem; }
 .close { position: absolute; top: 10px; right: 17px; min-width: 44px; min-height: 44px; border: 0; background: transparent; color: var(--gold-dark); font-size: 2rem; cursor: pointer; line-height: 1; }
 .close-action { margin-top: 10px; }
@@ -177,6 +185,9 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .date-line { font-size: .61rem; letter-spacing: .12em; }
   .section { min-height: 100vh; min-height: 100svh; padding: 58px 18px; }
   .event-card { width: 100%; padding: 30px 15px; border-radius: 20px; }
+  .celebration { padding-top: 38px; padding-bottom: 38px; }
+  .celebration-rings { width: clamp(125px, 36vw, 158px); margin-bottom: 8px; }
+  .celebration .event-card { padding: 25px 15px; }
   .event-date { gap: 8px; }
   .event-date span { font-size: .73rem; }
   .event-date strong { font-size: clamp(4rem, 19vw, 5rem); }
@@ -191,6 +202,12 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .modal { padding: 12px; }
   .modal-panel { width: 100%; max-height: calc(100svh - 24px); padding: 44px 20px 26px; border-radius: 22px; }
   .modal-panel h2 { font-size: 2.5rem; }
+  .map-modal-panel { padding: 40px 14px 18px; }
+  .map-modal-panel .section-icon { margin-bottom: 4px; }
+  .map-modal-panel h2 { font-size: 2.25rem; }
+  .map-modal-panel > p { margin-bottom: 12px; font-size: .82rem; }
+  .venue-map { height: min(48svh, 340px); }
+  .map-modal-panel .close-action { width: 100%; margin-top: 12px; }
   .footer { --petal-distance: 100svh; min-height: 100svh; padding: 90px 20px; }
   .floral { height: 80px; background-size: auto 200%; background-position: center bottom; }
   .footer h2 { font-size: clamp(3rem, 12vw, 4rem); }
