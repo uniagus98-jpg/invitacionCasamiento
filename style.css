@@ -225,7 +225,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .event-date span { font-size: .73rem; }
   .event-date strong { font-size: clamp(4rem, 19vw, 5rem); }
   .gallery { display: flex; width: 100%; max-width: 500px; gap: 0; justify-content: center; }
-  .gallery-frame { width: 100%; height: clamp(260px, 48svh, 360px); aspect-ratio: auto; border-width: 7px; }
+  .gallery-frame { width: 100%; height: clamp(260px, 49svh, 370px); aspect-ratio: auto; border-width: 7px; }
   .details-section { min-height: auto; gap: 18px; padding: 42px 15px 55px; }
   .detail-card { min-height: 0; padding: 28px 20px; border-radius: 18px; }
   .detail-card h2 { font-size: clamp(2rem, 9vw, 2.5rem); }
