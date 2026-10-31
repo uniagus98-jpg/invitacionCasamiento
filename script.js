@@ -66,13 +66,14 @@ document.querySelectorAll(".local-form").forEach(form => {
   });
 });
 
-// Galería de ejemplo. Cuando agregues tus fotos, copiá los archivos en /img
-// y cambiá los nombres de este arreglo. Sin fotos cargadas se muestra el placeholder.
+// Fotos optimizadas de la pareja en WebP para cargar más rápido en móviles.
 // Galería: cambia la foto solo cuando la imagen solicitada cargó correctamente.
 const galleryFiles = [
-  "img/foto1.webp",
-  "img/foto2.webp",
-  "img/foto3.webp"
+  "img/f1.webp",
+  "img/f2.webp",
+  "img/f3.webp",
+  "img/f4.webp",
+  "img/f5.webp"
 ];
 
 let galleryIndex = 0;
