@@ -94,9 +94,25 @@ function showGalleryImage(index) {
     // Ignora cargas anteriores si se hicieron clics rápidos.
     if (requestId !== galleryRequest) return;
 
-    galleryImage.src = candidate.src;
-    galleryImage.style.display = "block";
-    placeholder.style.display = "none";
+    const revealImage = () => {
+      if (requestId !== galleryRequest) return;
+
+      galleryImage.src = candidate.src;
+      galleryImage.style.display = "block";
+      placeholder.style.display = "none";
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (requestId === galleryRequest) galleryImage.classList.add("is-visible");
+        });
+      });
+    };
+
+    if (galleryImage.classList.contains("is-visible")) {
+      galleryImage.classList.remove("is-visible");
+      setTimeout(revealImage, 240);
+    } else {
+      revealImage();
+    }
 
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === requestedIndex);
@@ -110,6 +126,7 @@ function showGalleryImage(index) {
     const nextIndex = requestedIndex + 1;
 
     if (nextIndex >= galleryFiles.length) {
+      galleryImage.classList.remove("is-visible");
       galleryImage.style.display = "none";
       placeholder.style.display = "flex";
 
