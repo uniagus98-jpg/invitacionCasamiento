@@ -136,7 +136,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .scroll-cue-icon svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .section-next { position: absolute; left: 50%; bottom: 24px; translate: -50% 0; margin-top: 0; }
 .gallery-section { position: relative; isolation: isolate; padding-bottom: 65px; background: #5a3a2e; color: #fffdf8; }
-.gallery-section h2 { color: #e6c5ad; }
+.gallery-section h2 { color: #eee8dc; }
 .gallery-section .eyebrow { color: #d8c9a8; }
 .gallery-section .subtitle { color: #f4f0e8; }
 .gallery-section .hero-down { border-color: rgba(216, 201, 168, .72); background: rgba(247, 245, 240, .12); box-shadow: 0 5px 16px rgba(0, 0, 0, .18), inset 0 1px rgba(255, 255, 255, .12); color: #e5d6b4; }
