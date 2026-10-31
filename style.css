@@ -56,6 +56,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero, .footer { position: relative; }
 .hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(104px, 13vh, 130px) 22px clamp(80px, 10vh, 100px); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-around; background: url("img/fondoindex.webp") center 46% / cover no-repeat; }
 .hero .floral { display: none; }
+.hero .names { color: #fffefa; }
+.hero .names .name-ampersand { color: #f5ead5; }
+.hero .intro { color: #fffefa; text-shadow: 0 1px 5px rgba(0, 0, 0, .5); }
+.hero .hero-down { color: #fffefa; border-color: rgba(255, 250, 238, .8); background: rgba(35, 31, 26, .24); box-shadow: 0 5px 16px rgba(0, 0, 0, .26), inset 0 1px rgba(255, 255, 255, .18); }
+.hero .hero-down:hover { color: #f5ead5; background: rgba(35, 31, 26, .38); }
 .eyebrow { font-size: .68rem; letter-spacing: .24em; font-weight: 500; color: var(--gold-dark); margin: 0 0 17px; }
 h1, h2, h3, .countdown strong, .event-date strong { font-family: 'Crimson Text', Georgia, serif; }
 .names, .footer h2{ font-family: 'fuente';}
@@ -78,6 +83,8 @@ h1 em { font-weight: 400; }
 .date-line { letter-spacing: .17em; font-size: .7rem; margin: 0 0 26px; }
 .hero { --hero-divider-width: clamp(190px, 60vw, 300px); }
 .hero .date-line { width: var(--hero-divider-width); margin: 0; padding: 0 10px 8px; border-bottom: 1px solid var(--gold); color: var(--gold-dark); font-size: clamp(1.25rem, 3vw, 1.5rem); letter-spacing: .2em; text-align: center; }
+.hero .date-line { color: #f5ead5; border-color: rgba(255, 250, 238, .9); }
+.hero .intro::before { background: rgba(255, 250, 238, .88); }
 .hero-down { width: 54px; height: 54px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: linear-gradient(145deg, #fffefa, #f1eadc); box-shadow: 0 5px 16px rgba(62, 52, 35, .1), inset 0 1px rgba(255, 255, 255, .9); color: var(--gold-dark); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, color .2s ease; }
 .hero-down svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .hero-down:hover { transform: translateY(3px); box-shadow: 0 8px 20px rgba(62, 52, 35, .14), inset 0 1px rgba(255, 255, 255, .9); color: var(--gold); }
