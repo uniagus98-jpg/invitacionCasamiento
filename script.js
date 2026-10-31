@@ -1,5 +1,5 @@
 // Cambiá esta fecha por la fecha real del evento (AAAA-MM-DDTHH:MM:SS).
-const eventDate = new Date("2026-12-05T17:00:00");
+const eventDate = new Date("2026-12-05T18:00:00");
 
 function updateCountdown() {
   const remaining = Math.max(0, eventDate.getTime() - Date.now());

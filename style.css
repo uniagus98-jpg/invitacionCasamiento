@@ -215,11 +215,11 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .event-card { width: 100%; padding: 30px 15px; border-radius: 20px; }
   .celebration { padding-top: 38px; padding-bottom: 38px; }
   .celebration-rings { width: clamp(82px, 23vw, 96px); }
-  .celebration .event-card { padding: 37px 15px; }
+  .celebration .event-card { padding: 52px 15px; }
   .celebration .year { font-size: 1.05rem; }
-  .celebration .event-date { margin-top: 14px; }
+  .celebration .event-date { margin-top: 18px; }
   .celebration .event-date span { font-size: .84rem; }
-  .celebration .event-card h3 { margin-top: 18px; }
+  .celebration .event-card h3 { margin-top: 24px; }
   .event-date { gap: 8px; }
   .event-date span { font-size: .73rem; }
   .event-date strong { font-size: clamp(4rem, 19vw, 5rem); }
