@@ -98,10 +98,6 @@ function showGalleryImage(index) {
     const revealImage = () => {
       if (requestId !== galleryRequest) return;
 
-      galleryFrame.style.setProperty(
-        "--gallery-ratio",
-        `${candidate.naturalWidth} / ${candidate.naturalHeight}`
-      );
       galleryImage.src = candidate.src;
       galleryImage.style.display = "block";
       placeholder.style.display = "none";
