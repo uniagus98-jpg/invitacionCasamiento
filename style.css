@@ -153,6 +153,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .dots span { width: 9px; height: 9px; border-radius: 50%; background: #d6cbb5; }
 .dots .active { background: var(--gold); }
 .details-section { background: linear-gradient(180deg, #f7f5f0 0%, #eee8dc 100%); display: flex; flex-direction: column; align-items: center; gap: clamp(18px, 3vh, 28px); padding: clamp(45px, 8vh, 75px) clamp(16px, 4vw, 28px); }
+.details-title { margin: 0; color: #8a5a44; font-size: clamp(1.8rem, 7vw, 2.5rem); line-height: 1.05; }
 .detail-card { width: 100%; max-width: 520px; min-height: 260px; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: clamp(27px, 5vh, 40px) clamp(20px, 5vw, 34px); display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 25px #00000008; }
 .detail-card .section-icon { font-size: 2.3rem; }
 .detail-card h2 { font-size: 2.35rem; margin-bottom: 16px; }
@@ -228,6 +229,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .gallery-section.has-next { padding-bottom: 90px; }
   .gallery-frame { width: 100%; height: clamp(290px, 56svh, 430px); aspect-ratio: auto; border-width: 4px; }
   .details-section { min-height: auto; gap: 18px; padding: 42px 15px 55px; }
+  .details-title { font-size: clamp(1.8rem, 7.2vw, 2.25rem); }
   .detail-card { min-height: 0; padding: 28px 20px; border-radius: 18px; }
   .detail-card h2 { font-size: clamp(2rem, 9vw, 2.5rem); }
   .detail-card p { font-size: .85rem; flex: initial; }

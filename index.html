@@ -79,11 +79,11 @@
     </section>
 
     <section class="section details-section" id="detalles">
+      <h2 class="details-title">Detalles de la celebración</h2>
       <div class="detail-card">
-        <div class="section-icon">♫</div>
-        <h2>Música</h2>
-        <p>¿Cuál es la canción que no puede faltar en la lista de reproducción de la fiesta?</p>
-        <button class="button button-solid" data-modal="musicModal">Sugerir canción</button>
+        <div class="section-icon">❦</div>
+        <h2>Compartamos la mesa</h2>
+        <p>Para acompañar la celebración, les proponemos una modalidad a la canasta: traer una ensalada para compartir y la bebida que prefieran, con o sin alcohol.</p>
       </div>
       <div class="detail-card">
         <div class="section-icon">✧</div>
@@ -129,9 +129,6 @@
   </main>
 
   <!-- Ventanas internas: no abren pestañas externas -->
-  <div class="modal" id="musicModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="musicTitle">
-    <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">♫</div><h2 id="musicTitle">Sugerir canción</h2><p>¿Qué canción te gustaría escuchar en la fiesta?</p><form class="local-form" data-message="¡Gracias por sugerir una canción!"><label>Nombre de la canción<input required name="song" placeholder="Canción y artista"></label><label>Tu nombre<input required name="guest" placeholder="¿Quién la sugiere?"></label><button class="button button-solid" type="submit">Enviar sugerencia</button></form><p class="form-note">Este formulario es una maqueta: conectalo a un servicio o backend para recibir respuestas.</p></div>
-  </div>
   <div class="modal" id="dressModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
     <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">✧</div><h2 id="dressTitle">Dress Code</h2><p><strong>Elegante / formal</strong></p><p>Elegí tu mejor look para acompañarnos. Te pedimos evitar el blanco y los tonos muy similares al vestido de la novia.</p><button class="button button-outline close-action">Entendido</button></div>
   </div>
