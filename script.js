@@ -126,16 +126,6 @@ function showGalleryImage(index) {
   candidate.src = galleryFiles[requestedIndex];
 }
 
-document.querySelector(".gallery-arrow.prev")
-  .addEventListener("click", () => {
-    showGalleryImage(galleryIndex - 1);
-  });
-
-document.querySelector(".gallery-arrow.next")
-  .addEventListener("click", () => {
-    showGalleryImage(galleryIndex + 1);
-  });
-
 galleryFrame.addEventListener("pointerdown", event => {
   if (event.pointerType !== "touch") return;
   galleryTouchStart = { x: event.clientX, y: event.clientY };
