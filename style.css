@@ -54,7 +54,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .hero, .footer { position: relative; }
-.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(104px, 13vh, 130px) 22px clamp(80px, 10vh, 100px); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-around; background-color: var(--ivory); background-image: linear-gradient(rgba(247, 245, 240, .62), rgba(247, 245, 240, .62)), url("img/fondoindex.webp"); background-position: center, center 46%; background-size: cover; background-repeat: no-repeat; }
+.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(104px, 13vh, 130px) 22px clamp(80px, 10vh, 100px); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-around; background: url("img/fondoindex.webp") center 46% / cover no-repeat; }
+.hero .floral { display: none; }
 .eyebrow { font-size: .68rem; letter-spacing: .24em; font-weight: 500; color: var(--gold-dark); margin: 0 0 17px; }
 h1, h2, h3, .countdown strong, .event-date strong { font-family: 'Crimson Text', Georgia, serif; }
 .names, .footer h2{ font-family: 'fuente';}
