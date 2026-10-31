@@ -143,8 +143,8 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .gallery-section .hero-down:hover { color: #fffefa; }
 .subtitle { margin: -12px 0 30px; font-size: 1rem; }
 .gallery { position: relative; display: flex; width: min(100%, 500px); align-items: center; justify-content: center; gap: 0; }
-.gallery-frame { width: 100%; max-width: 500px; aspect-ratio: 3 / 4; background: #e6dfd0; border: 6px solid white; box-shadow: 0 8px 25px #00000014; position: relative; overflow: hidden; touch-action: pan-y; }
-.gallery-frame img { width: 100%; height: 100%; object-fit: cover; display: none; opacity: 0; transition: opacity 280ms ease; user-select: none; -webkit-user-drag: none; }
+.gallery-frame { width: 100%; max-width: 500px; aspect-ratio: var(--gallery-ratio, 3 / 4); background: #e6dfd0; border: 6px solid white; box-shadow: 0 8px 25px #00000014; position: relative; overflow: hidden; touch-action: pan-y; }
+.gallery-frame img { width: 100%; height: 100%; object-fit: contain; display: none; opacity: 0; transition: opacity 280ms ease; user-select: none; -webkit-user-drag: none; }
 .gallery-frame img.is-visible { opacity: 1; }
 .photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px; color: #9e8e6b; background: linear-gradient(145deg, #eee9dd, #d8d0bf); }
 .photo-placeholder span { font-size: 4rem; }
@@ -226,7 +226,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .event-date strong { font-size: clamp(4rem, 19vw, 5rem); }
   .gallery { display: flex; width: 100%; max-width: 500px; gap: 0; justify-content: center; }
   .gallery-section.has-next { padding-bottom: 90px; }
-  .gallery-frame { width: 100%; height: clamp(290px, 56svh, 430px); aspect-ratio: auto; border-width: 4px; }
+  .gallery-frame { width: 100%; border-width: 4px; }
   .details-section { min-height: auto; gap: 18px; padding: 42px 15px 55px; }
   .detail-card { min-height: 0; padding: 28px 20px; border-radius: 18px; }
   .detail-card h2 { font-size: clamp(2rem, 9vw, 2.5rem); }
@@ -249,7 +249,6 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .gallery-section { padding-top: 34px; }
   .gallery-section h2 { margin-bottom: 16px; }
   .gallery-section .subtitle { margin-bottom: 18px; }
-  .gallery-frame { height: clamp(280px, 53svh, 340px); }
 }
 @media (max-width: 360px) {
   .hero { padding-left: 12px; padding-right: 12px; }
