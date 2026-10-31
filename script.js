@@ -99,6 +99,9 @@ function showGalleryImage(index) {
       if (requestId !== galleryRequest) return;
 
       galleryImage.src = candidate.src;
+      galleryImage.style.objectPosition = [2, 4].includes(requestedIndex)
+        ? "center bottom"
+        : "center center";
       galleryImage.style.display = "block";
       placeholder.style.display = "none";
       requestAnimationFrame(() => {
