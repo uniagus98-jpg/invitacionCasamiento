@@ -92,7 +92,12 @@
         <p>Para acompañar la celebración, les proponemos una modalidad a la canasta: traer una ensalada para compartir y la bebida que prefieran, con o sin alcohol.</p>
       </div>
       <div class="detail-card">
-        <div class="section-icon">✧</div>
+        <div class="section-icon" aria-hidden="true">
+          <svg class="bow-icon" viewBox="0 0 48 48" focusable="false">
+            <path d="M21 22c-6-8-15-10-17-4s6 10 17 8m6-4c6-8 15-10 17-4s-6 10-17 8M22 23l-7 17 9-6 2 9 2-20" />
+            <path d="M21 22c0-3 2-5 4-5s4 2 4 5-2 5-4 5-4-2-4-5Z" />
+          </svg>
+        </div>
         <h2>Dress Code</h2>
         <p>Queremos que te sientas cómodo/a y elegante para compartir esta noche con nosotros.</p>
         <button class="button button-solid" data-modal="dressModal">Ver dress code</button>
@@ -136,7 +141,19 @@
 
   <!-- Ventanas internas: no abren pestañas externas -->
   <div class="modal" id="dressModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
-    <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">✧</div><h2 id="dressTitle">Dress Code</h2><p><strong>Elegante / formal</strong></p><p>Elegí tu mejor look para acompañarnos. Te pedimos evitar el blanco y los tonos muy similares al vestido de la novia.</p><button class="button button-outline close-action">Entendido</button></div>
+    <div class="modal-panel dress-modal-panel">
+      <button class="close" aria-label="Cerrar">×</button>
+      <div class="section-icon" aria-hidden="true">
+        <svg class="bow-icon" viewBox="0 0 48 48" focusable="false">
+          <path d="M21 22c-6-8-15-10-17-4s6 10 17 8m6-4c6-8 15-10 17-4s-6 10-17 8M22 23l-7 17 9-6 2 9 2-20" />
+          <path d="M21 22c0-3 2-5 4-5s4 2 4 5-2 5-4 5-4-2-4-5Z" />
+        </svg>
+      </div>
+      <h2 id="dressTitle">Dress Code</h2>
+      <p>Nos encantaría que nos acompañen con un look formal y veraniego, elegante, fresco y acorde a la ocasión. Te dejamos algunas referencias:</p>
+      <img class="dress-reference" src="img/dresscode.png" alt="Referencias de vestimenta formal y veraniega y paleta de colores sugerida" />
+      <button class="button button-outline close-action">Entendido</button>
+    </div>
   </div>
   <div class="modal map-modal" id="mapsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mapsTitle">
     <div class="modal-panel map-modal-panel"><button class="close" aria-label="Cerrar mapa">×</button><div class="section-icon" aria-hidden="true">⌖</div><h2 id="mapsTitle">Cómo llegar</h2><p>Quinta Los Trinos · Plottier, Neuquén</p><iframe class="venue-map" title="Mapa de Quinta Los Trinos" src="https://www.google.com/maps?q=-38.9502409%2C-68.2515276&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><button class="button button-outline close-action" type="button">Volver</button></div>
