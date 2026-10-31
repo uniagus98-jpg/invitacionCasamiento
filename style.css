@@ -107,6 +107,7 @@ h1 em { font-weight: 400; }
 .countdown-section .hero-down { border-color: rgba(216, 201, 168, .72); background: rgba(247, 245, 240, .12); box-shadow: 0 5px 16px rgba(0, 0, 0, .18), inset 0 1px rgba(255, 255, 255, .12); color: #e5d6b4; }
 .countdown-section .hero-down:hover { color: #fffefa; }
 .celebration { gap: clamp(12px, 2vh, 18px); background: linear-gradient(145deg, #eee8dc 0%, #e2d6bf 100%); }
+.celebration h2, .celebration .month, .celebration .year, .celebration .event-date span, .celebration .event-date strong, .celebration .event-card h3 { color: #8a5a44; }
 .celebration h2 { margin: 0; }
 .celebration-rings { display: block; width: clamp(92px, 16vw, 120px); height: auto; object-fit: contain; margin: 0 auto; }
 .section-icon { color: var(--gold); font-size: 2.5rem; line-height: 1; margin-bottom: 13px; font-family: Georgia, serif; }
@@ -118,7 +119,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .celebration .event-date { margin-top: 16px; }
 .celebration .event-date span { font-size: 1rem; }
 .celebration .event-card h3 { margin: 20px 0 6px; }
-.celebration .event-card .button { margin-top: 14px; }
+.celebration .event-card .button { margin-top: 14px; border-color: #8a5a44; background: #8a5a44; color: #fffefa; }
 .month, .year { color: var(--gold-dark); letter-spacing: .28em; font-family: 'Crimson Text', Georgia, serif; }
 .event-date { display: grid; grid-template-columns: 1fr auto 1fr; gap: 15px; align-items: center; margin: 18px 0 0; }
 .event-date span { border-top: 1px solid var(--ink); padding-top: 9px; font-family: 'Crimson Text', Georgia, serif; color: var(--gold-dark); font-size: .92rem; }
