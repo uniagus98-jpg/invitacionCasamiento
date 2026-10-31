@@ -155,13 +155,11 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .dots .active { background: var(--gold); }
 .details-section { background: linear-gradient(180deg, #f7f5f0 0%, #eee8dc 100%); display: flex; flex-direction: column; align-items: center; gap: clamp(18px, 3vh, 28px); padding: clamp(45px, 8vh, 75px) clamp(16px, 4vw, 28px); }
 .details-title { margin: 0; color: #8a5a44; font-size: clamp(1.8rem, 7vw, 2.5rem); line-height: 1.05; }
-.detail-card { width: 100%; max-width: 520px; min-height: 260px; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: clamp(27px, 5vh, 40px) clamp(20px, 5vw, 34px); display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 25px #00000008; }
+.detail-card { width: 100%; max-width: 520px; min-height: 260px; background: #f0ece3; border: 1px solid var(--line); border-radius: 20px; padding: clamp(27px, 5vh, 40px) clamp(20px, 5vw, 34px); display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 25px #00000008; }
 .detail-card .section-icon { font-size: 2.3rem; }
 .detail-card h2 { font-size: 2.35rem; margin-bottom: 16px; }
 .detail-card p { line-height: 1.75; font-size: .86rem; margin: 0 0 22px; flex: 1; }
 .detail-card .button { width: 100%; padding: 13px 10px; font-size: .75rem; }
-.detail-card:nth-child(even) { background: #f0ece3; }
-.rsvp-card { background: #e7decb !important; }
 .footer { --petal-distance: 70svh; isolation: isolate; min-height: 65vh; min-height: 65svh; text-align: center; padding: 85px 20px; background: var(--ivory); display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .footer > :not(.floral):not(.petal-rain) { position: relative; z-index: 2; }
 .petal-rain { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; }
