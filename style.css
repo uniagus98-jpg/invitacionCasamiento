@@ -160,8 +160,6 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .detail-card h2 { font-size: 2.35rem; margin-bottom: 16px; }
 .detail-card p { line-height: 1.75; font-size: .86rem; margin: 0 0 22px; flex: 1; }
 .detail-card .button { width: 100%; padding: 13px 10px; font-size: .75rem; }
-.detail-card:nth-child(even) { background: #f0ece3; }
-.rsvp-card { background: #e7decb !important; }
 .footer { --petal-distance: 70svh; isolation: isolate; min-height: 65vh; min-height: 65svh; text-align: center; padding: 85px 20px; background: var(--ivory); display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .footer > :not(.floral):not(.petal-rain) { position: relative; z-index: 2; }
 .petal-rain { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; }
