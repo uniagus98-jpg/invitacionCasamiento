@@ -99,7 +99,7 @@ h1 em { font-weight: 400; }
 .section.has-next { padding-bottom: clamp(112px, 14vh, 132px); }
 .countdown-section { justify-content: flex-end; background: url("img/cuentaRegresiva.webp") center 52% / cover no-repeat; }
 .countdown-section .section-icon, .countdown-section .eyebrow, .countdown-section h2 { color: #fffefa; text-shadow: 0 2px 8px rgba(0, 0, 0, .68); }
-.countdown-section .countdown { width: min(100%, 540px); margin: 4px 0 0; padding: 24px 20px; border: 1px solid rgba(255, 250, 238, .5); border-radius: 20px; background: rgba(35, 31, 26, .48); box-shadow: 0 12px 32px rgba(0, 0, 0, .16), inset 0 1px rgba(255, 255, 255, .08); }
+.countdown-section .countdown { width: calc(100% + clamp(36px, 8vw, 60px)); max-width: none; margin: 4px 0 0; padding: 24px 20px; border: 1px solid rgba(255, 250, 238, .5); border-radius: 20px; background: rgba(35, 31, 26, .48); box-shadow: 0 12px 32px rgba(0, 0, 0, .16), inset 0 1px rgba(255, 255, 255, .08); }
 .countdown-section .countdown div { flex: 1; min-width: 0; }
 .countdown-section .countdown strong { color: #fffefa; text-shadow: 0 1px 5px rgba(0, 0, 0, .42); }
 .countdown-section .countdown span { color: #f5ead5; }
