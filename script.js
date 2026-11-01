@@ -96,16 +96,6 @@ function closeModal(modal) {
 document.querySelectorAll("[data-modal]").forEach(button => {
   button.addEventListener("click", () => openModal(button.dataset.modal));
 });
-document.querySelectorAll('.section-next[href^="#"]').forEach(link => {
-  const destination = document.querySelector(link.getAttribute("href"));
-  if (!destination) return;
-
-  const observer = new IntersectionObserver(([entry]) => {
-    link.classList.toggle("is-hidden", entry.isIntersecting);
-  }, { threshold: 0 });
-  observer.observe(destination);
-  link.addEventListener("click", () => link.classList.add("is-hidden"));
-});
 modals.forEach(modal => {
   modal.querySelector(".close")?.addEventListener("click", () => closeModal(modal));
   modal.querySelectorAll(".close-action").forEach(button => button.addEventListener("click", () => closeModal(modal)));
