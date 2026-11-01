@@ -1,5 +1,6 @@
 // Cambiá esta fecha por la fecha real del evento (AAAA-MM-DDTHH:MM:SS).
 const eventDate = new Date("2026-12-05T18:00:00");
+const RSVP_WEB_APP_URL = ""; // Agregar aquí la URL /exec del despliegue de Google Apps Script.
 
 function updateCountdown() {
   const remaining = Math.max(0, eventDate.getTime() - Date.now());
@@ -115,9 +116,32 @@ function showToast(message) {
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => toast.classList.remove("show"), 3500);
 }
+const rsvpForm = document.getElementById("rsvpForm");
+const rsvpResponseFrame = document.getElementById("rsvpResponseFrame");
+let rsvpSubmissionPending = false;
+rsvpResponseFrame?.addEventListener("load", () => {
+  if (!rsvpSubmissionPending) return;
+  rsvpSubmissionPending = false;
+  showToast("¡Gracias! Tu respuesta se guardó correctamente.");
+  rsvpForm.reset();
+  closeModal(rsvpForm.closest(".modal"));
+});
+
 document.querySelectorAll(".local-form").forEach(form => {
   form.addEventListener("submit", event => {
     event.preventDefault();
+    if (form.id === "rsvpForm") {
+      if (!RSVP_WEB_APP_URL) {
+        showToast("La hoja de confirmaciones todavía no está conectada.");
+        return;
+      }
+      form.action = RSVP_WEB_APP_URL;
+      form.method = "POST";
+      form.target = "rsvpResponseFrame";
+      rsvpSubmissionPending = true;
+      HTMLFormElement.prototype.submit.call(form);
+      return;
+    }
     showToast(form.dataset.message || "¡Gracias!");
     form.reset();
     closeModal(form.closest(".modal"));
