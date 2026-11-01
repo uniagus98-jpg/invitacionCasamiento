@@ -112,6 +112,12 @@
         <p>Tu presencia es nuestro mejor regalo. Si además querés hacernos un obsequio, acá te dejamos algunas opciones.</p>
         <button class="button button-solid" data-modal="giftModal">Información para regalos</button>
       </div>
+      <div class="detail-card">
+        <div class="section-icon" aria-hidden="true">♫</div>
+        <h2>Música</h2>
+        <p>¿Cuál es la canción que no puede faltar en la lista de reproducción de la fiesta?</p>
+        <button class="button button-solid" data-modal="musicModal">Ver lista de reproducción</button>
+      </div>
       <div class="detail-card rsvp-card">
         <div class="section-icon">✉</div>
         <h2>¿Nos acompañás?</h2>
@@ -170,6 +176,19 @@
     <p>
 Para quienes quieran hacernos un obsequio monetario, les compartimos nuestro alias, sino también adjuntamos una lista de regalos, los cuales nos ayudarían en esta nueva etapa:     </p>
       <div class="gift-data"><strong>Alias para transferencia:</strong><br><code>casamiento.lu.juli</code><br><br><strong>Lista de regalos</strong><br><a class="drive-link" href="https://docs.google.com/spreadsheets/d/1Y8HkCKVWiGscrsXScdJI35FfE0wdsM2T84edgY0ktEU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Ir a Drive<span aria-hidden="true">↗</span></a></div><button class="button button-outline close-action">Cerrar</button></div>
+  </div>
+  <div class="modal" id="musicModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="musicTitle">
+    <div class="modal-panel">
+      <button class="close" aria-label="Cerrar">×</button>
+      <div class="section-icon" aria-hidden="true">♫</div>
+      <h2 id="musicTitle">Música</h2>
+      <p>Te compartimos la lista de reproducción en diferentes aplicaciones, para que elijas la que más te guste, y agregues los temas infaltables:</p>
+      <div class="music-platform-links">
+        <a class="music-platform" href="https://music.youtube.com/playlist?list=PLYD6DOtJvT6U&amp;jct=MU1IpyGzRFItJ1sMha-N-Q" target="_blank" rel="noopener noreferrer" aria-label="Abrir lista en YouTube Music, en una pestaña nueva">YouTube Music <span aria-hidden="true">↗</span></a>
+        <a class="music-platform" href="https://open.spotify.com/playlist/5Z4LLzZbpULn4d5r0wpbmh?pi=LUctMbvJT4aV-&amp;nd=1&amp;dlsi=8ed5db7a7d0a4e63" target="_blank" rel="noopener noreferrer" aria-label="Abrir lista en Spotify, en una pestaña nueva">Spotify <span aria-hidden="true">↗</span></a>
+      </div>
+      <button class="button button-outline close-action">Cerrar</button>
+    </div>
   </div>
   <div class="modal" id="rsvpModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
     <div class="modal-panel"><button class="close" aria-label="Cerrar">×</button><div class="section-icon">✉</div><h2 id="rsvpTitle">Confirmar asistencia</h2><p>¡Nos alegra que quieras acompañarnos!</p><form class="local-form" data-message="¡Gracias! Tu respuesta quedó registrada en esta demostración."><label>Nombre y apellido<input required name="name" placeholder="Tu nombre"></label><fieldset class="attendance-group"><legend>¿Vas a asistir?</legend><div class="attendance-options" id="attendanceOptions"><label class="attendance-choice attendance-choice--yes"><input required type="radio" name="attendance" value="Sí, ahí estaré"><span>Sí, ahí estaré</span></label><label class="attendance-choice attendance-choice--no" id="noAttendanceChoice"><input required type="radio" name="attendance" value="No podré asistir"><span>No podré asistir</span></label></div><p class="attendance-hint" id="attendanceHint" aria-live="polite"></p></fieldset><button class="button button-solid" type="submit">Enviar confirmación</button></form><p class="form-note">Para recibir confirmaciones reales, conectá este formulario a un backend o servicio de formularios.</p></div>
