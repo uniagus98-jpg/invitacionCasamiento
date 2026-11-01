@@ -19,6 +19,60 @@ setInterval(updateCountdown, 1000);
 
 const modals = [...document.querySelectorAll(".modal")];
 let previousFocus = null;
+const attendanceOptions = document.getElementById("attendanceOptions");
+const noAttendanceChoice = document.getElementById("noAttendanceChoice");
+const noAttendanceInput = noAttendanceChoice?.querySelector('input[type="radio"]');
+const attendanceHint = document.getElementById("attendanceHint");
+let noAttendanceAnimationStarted = false;
+let noAttendanceMoveInterval;
+
+function moveNoAttendanceChoice() {
+  if (!attendanceOptions || !noAttendanceChoice) return;
+
+  const maxLeft = Math.max(0, attendanceOptions.clientWidth - noAttendanceChoice.offsetWidth);
+  const maxTop = Math.max(0, attendanceOptions.clientHeight - noAttendanceChoice.offsetHeight);
+  const positions = [
+    [maxLeft, 0],
+    [0, Math.min(54, maxTop)],
+    [maxLeft, Math.min(54, maxTop)],
+    [0, maxTop],
+    [maxLeft, maxTop]
+  ];
+  let position = positions[Math.floor(Math.random() * positions.length)];
+
+  if (noAttendanceChoice.dataset.position) {
+    const previousPosition = Number(noAttendanceChoice.dataset.position);
+    let positionIndex = positions.indexOf(position);
+    while (positionIndex === previousPosition) {
+      positionIndex = Math.floor(Math.random() * positions.length);
+      position = positions[positionIndex];
+    }
+    noAttendanceChoice.dataset.position = String(positionIndex);
+  } else {
+    noAttendanceChoice.dataset.position = String(positions.indexOf(position));
+  }
+
+  noAttendanceChoice.style.left = `${position[0]}px`;
+  noAttendanceChoice.style.top = `${position[1]}px`;
+}
+
+function startNoAttendanceAnimation() {
+  if (noAttendanceAnimationStarted || !noAttendanceChoice || !noAttendanceInput) return;
+  noAttendanceAnimationStarted = true;
+  noAttendanceChoice.classList.add("is-moving");
+  noAttendanceInput.disabled = true;
+  attendanceHint.textContent = "La opción «No podré asistir» estará disponible en unos segundos…";
+  moveNoAttendanceChoice();
+  noAttendanceMoveInterval = setInterval(moveNoAttendanceChoice, 780);
+
+  setTimeout(() => {
+    clearInterval(noAttendanceMoveInterval);
+    noAttendanceChoice.classList.remove("is-moving");
+    noAttendanceInput.disabled = false;
+    attendanceHint.textContent = "¡Listo! Ya podés seleccionar «No podré asistir».";
+  }, 10000);
+}
+
 function openModal(id) {
   const modal = document.getElementById(id);
   if (!modal) return;
@@ -26,6 +80,7 @@ function openModal(id) {
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  if (id === "rsvpModal") startNoAttendanceAnimation();
   modal.querySelector(".close")?.focus();
 }
 function closeModal(modal) {

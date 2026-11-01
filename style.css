@@ -199,6 +199,14 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .local-form { display: grid; gap: 15px; text-align: left; margin-top: 22px; }
 .local-form label { display: grid; gap: 7px; font-size: .8rem; color: var(--muted); }
 .local-form input, .local-form select { width: 100%; padding: 13px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: white; outline-color: var(--gold); }
+.attendance-group { min-width: 0; margin: 0; padding: 0; border: 0; }
+.attendance-group legend { margin-bottom: 8px; color: var(--muted); font-size: .8rem; }
+.attendance-options { position: relative; width: 100%; min-height: 164px; }
+.local-form .attendance-choice { position: absolute; display: flex; width: calc(50% - 6px); min-height: 48px; align-items: center; justify-content: center; gap: 8px; padding: 9px; border: 1px solid var(--line); border-radius: 10px; background: #fffefa; color: var(--ink); font-size: .76rem; text-align: center; cursor: pointer; }
+.attendance-choice--yes { top: 0; left: 0; }
+.attendance-choice--no { z-index: 1; top: 0; left: calc(50% + 6px); transition: left .22s ease, top .22s ease; }
+.local-form .attendance-choice input[type="radio"] { flex: 0 0 18px; width: 18px; height: 18px; margin: 0; padding: 0; accent-color: var(--gold-dark); }
+.attendance-hint { min-height: 1.4em; margin: 2px 0 0 !important; color: var(--gold-dark); font-size: .72rem !important; line-height: 1.4 !important; text-align: center; }
 .local-form .button { width: 100%; margin-top: 4px; }
 .form-note { font-size: .72rem !important; color: var(--muted); margin-top: 18px; }
 .toast { position: fixed; z-index: 40; bottom: 22px; left: 50%; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; background: #393630; color: white; padding: 13px 18px; border-radius: 12px; width: max-content; max-width: calc(100% - 32px); font-size: .83rem; transition: .2s; }
