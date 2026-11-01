@@ -68,6 +68,8 @@ function startNoAttendanceAnimation() {
   setTimeout(() => {
     clearInterval(noAttendanceMoveInterval);
     noAttendanceChoice.classList.remove("is-moving");
+    noAttendanceChoice.style.left = "0px";
+    noAttendanceChoice.style.top = "56px";
     noAttendanceInput.disabled = false;
     attendanceHint.textContent = "¡Listo! Ya podés seleccionar «No podré asistir».";
   }, 10000);
