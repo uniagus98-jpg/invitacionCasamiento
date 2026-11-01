@@ -116,6 +116,37 @@ function showToast(message) {
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => toast.classList.remove("show"), 3500);
 }
+document.querySelectorAll(".copy-alias-button").forEach(button => {
+  button.addEventListener("click", async () => {
+    let copied = false;
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(button.dataset.copy);
+        copied = true;
+      }
+    } catch {
+      copied = false;
+    }
+
+    if (!copied) {
+      const temporaryField = document.createElement("textarea");
+      temporaryField.value = button.dataset.copy;
+      temporaryField.setAttribute("readonly", "");
+      temporaryField.style.position = "fixed";
+      temporaryField.style.opacity = "0";
+      document.body.append(temporaryField);
+      temporaryField.select();
+      try {
+        copied = document.execCommand("copy");
+      } catch {
+        copied = false;
+      }
+      temporaryField.remove();
+    }
+
+    showToast(copied ? "Alias copiado al portapapeles" : "No se pudo copiar. Seleccioná el alias para copiarlo.");
+  });
+});
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpResponseFrame = document.getElementById("rsvpResponseFrame");
 let rsvpSubmissionPending = false;
