@@ -123,6 +123,52 @@ document.querySelectorAll(".local-form").forEach(form => {
   });
 });
 
+const celebrationEffects = document.getElementById("celebrationEffects");
+const attendanceRadios = [...document.querySelectorAll('input[name="attendance"]')];
+
+function celebrateAttendance() {
+  if (!celebrationEffects) return;
+  const colors = ["#668d68", "#8eaa7f", "#d8c9a8", "#f5f1e8", "#a7bd92"];
+  celebrationEffects.replaceChildren();
+
+  for (let i = 0; i < 38; i += 1) {
+    const isStreamer = i % 7 === 0;
+    const piece = document.createElement("i");
+    piece.className = isStreamer ? "confetti-piece streamer" : "confetti-piece paper-bit";
+    piece.style.setProperty("--x", `${Math.random() * 100}vw`);
+    piece.style.setProperty("--fall-time", `${2.6 + Math.random() * 1.8}s`);
+    piece.style.setProperty("--fall-delay", `${Math.random() * 0.55}s`);
+    piece.style.setProperty("--drift", `${Math.random() * 180 - 90}px`);
+    piece.style.setProperty("--spin", `${Math.random() * 900 - 450}deg`);
+    if (isStreamer) {
+      piece.style.setProperty("--streamer-color", colors[Math.floor(Math.random() * 2)]);
+    } else {
+      piece.style.setProperty("--paper-color", colors[Math.floor(Math.random() * colors.length)]);
+    }
+    piece.addEventListener("animationend", () => piece.remove(), { once: true });
+    celebrationEffects.append(piece);
+  }
+}
+
+function shakeInvitation() {
+  [document.querySelector(".invitation"), document.querySelector("#rsvpModal .modal-panel")]
+    .filter(Boolean)
+    .forEach(element => {
+      element.classList.remove("screen-shake");
+      void element.offsetWidth;
+      element.classList.add("screen-shake");
+      element.addEventListener("animationend", () => element.classList.remove("screen-shake"), { once: true });
+    });
+}
+
+attendanceRadios.forEach(radio => {
+  radio.addEventListener("change", () => {
+    if (!radio.checked) return;
+    if (radio.value === "Sí, ahí estaré") celebrateAttendance();
+    if (radio.value === "No podré asistir") shakeInvitation();
+  });
+});
+
 // Fotos optimizadas de la pareja en WebP para cargar más rápido en móviles.
 // Galería: cambia la foto solo cuando la imagen solicitada cargó correctamente.
 const galleryFiles = [

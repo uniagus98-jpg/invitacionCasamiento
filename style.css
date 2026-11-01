@@ -210,6 +210,13 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .attendance-hint { min-height: 1.4em; margin: 2px 0 0 !important; color: var(--gold-dark); font-size: .72rem !important; line-height: 1.4 !important; text-align: center; }
 @keyframes attendance-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(.94); } }
 @media (prefers-reduced-motion: reduce) { #rsvpModal.open .attendance-choice--yes { animation: none; } }
+.celebration-effects { position: fixed; z-index: 30; inset: 0; overflow: hidden; pointer-events: none; }
+.confetti-piece { position: absolute; top: -30px; left: var(--x); opacity: 0; animation: confetti-fall var(--fall-time) linear var(--fall-delay) forwards; will-change: transform, opacity; }
+.paper-bit { width: 8px; height: 13px; border-radius: 1px; background: var(--paper-color); }
+.streamer { width: 12px; height: 50px; border-left: 3px solid var(--streamer-color); border-right: 2px solid var(--streamer-color); border-radius: 45% 55% 50% 40%; }
+@keyframes confetti-fall { 0% { opacity: 0; transform: translate3d(0, -30px, 0) rotate(0); } 12% { opacity: .95; } 100% { opacity: 0; transform: translate3d(var(--drift), 110vh, 0) rotate(var(--spin)); } }
+.invitation.screen-shake, #rsvpModal .modal-panel.screen-shake { animation: invitation-shake .48s ease-in-out; }
+@keyframes invitation-shake { 0%, 100% { transform: translateX(0); } 16% { transform: translateX(-7px); } 32% { transform: translateX(7px); } 48% { transform: translateX(-5px); } 64% { transform: translateX(5px); } 80% { transform: translateX(-2px); } }
 .local-form .button { width: 100%; margin-top: 4px; }
 .form-note { font-size: .72rem !important; color: var(--muted); margin-top: 18px; }
 .toast { position: fixed; z-index: 40; bottom: 22px; left: 50%; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; background: #393630; color: white; padding: 13px 18px; border-radius: 12px; width: max-content; max-width: calc(100% - 32px); font-size: .83rem; transition: .2s; }
