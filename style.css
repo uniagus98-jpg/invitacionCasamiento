@@ -54,7 +54,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .hero, .footer { position: relative; }
-.hero { min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(104px, 13vh, 130px) 22px clamp(80px, 10vh, 100px); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-around; background: url("img/fondoindex.webp") center 46% / cover no-repeat; }
+.hero { min-height: 100vh; min-height: 100svh; min-height: 100dvh; width: 100%; padding: clamp(104px, 13vh, 130px) 22px clamp(80px, 10vh, 100px); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-around; background: url("img/fondoindex.webp") center 46% / cover no-repeat; }
 .hero .floral { display: none; }
 .hero .names { color: #fffefa; }
 .hero .names .name-ampersand { color: #f5ead5; }
@@ -88,7 +88,7 @@ h1 em { font-weight: 400; }
 .button-solid { background: var(--gold);
    color: var(--ivory); }
 .button-outline { background: transparent; color: var(--gold-dark); }
-.section { position: relative; min-height: 100vh; min-height: 100svh; width: 100%; padding: clamp(58px, 9vh, 90px) clamp(18px, 4vw, 30px); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.section { position: relative; min-height: 100vh; min-height: 100svh; min-height: 100dvh; width: 100%; padding: clamp(58px, 9vh, 90px) clamp(18px, 4vw, 30px); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .countdown-section { justify-content: flex-end; background: url("img/cuentaRegresiva.webp") center 52% / cover no-repeat; }
 .countdown-section .section-icon, .countdown-section .eyebrow, .countdown-section h2 { color: #fffefa; text-shadow: 0 2px 8px rgba(0, 0, 0, .68); }
 .countdown-section .countdown { width: calc(100% + clamp(36px, 8vw, 60px)); max-width: none; margin: 4px 0 0; padding: 24px 20px; border: 1px solid rgba(255, 250, 238, .5); border-radius: 0; background: rgba(35, 31, 26, .48); box-shadow: 0 12px 32px rgba(0, 0, 0, .16), inset 0 1px rgba(255, 255, 255, .08); }
@@ -148,7 +148,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .detail-card h2 { font-size: 2.35rem; margin-bottom: 16px; }
 .detail-card p { line-height: 1.75; font-size: .86rem; margin: 0 0 22px; flex: 1; }
 .detail-card .button { width: 100%; padding: 13px 10px; font-size: .75rem; }
-.footer { isolation: isolate; min-height: 100vh; min-height: 100svh; padding: 40px 20px; background: url("img/teEsperamos.png") center 46% / cover no-repeat; color: #fffefa; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; text-align: center; }
+.footer { isolation: isolate; min-height: 100vh; min-height: 100svh; min-height: 100dvh; padding: 40px 20px; background: url("img/teEsperamos.png") center 46% / cover no-repeat; color: #fffefa; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; text-align: center; }
 .footer-monogram { display: block; width: clamp(190px, 36vw, 310px); max-width: 68vw; max-height: 52svh; height: auto; object-fit: contain; filter: brightness(0) invert(1); }
 .footer p { margin: 0; color: #fffefa; font-family: 'Crimson Text', Georgia, serif; font-size: clamp(1.7rem, 5vw, 2.3rem); text-shadow: 0 2px 12px rgba(0, 0, 0, .75); }
 .modal { position: fixed; inset: 0; z-index: 20; background: rgba(28, 26, 22, .56); display: flex; justify-content: center; align-items: center; padding: 18px; opacity: 0; visibility: hidden; transition: opacity .22s ease, visibility .22s ease; }
@@ -204,7 +204,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 @media (max-width: 540px) {
   html { scroll-snap-type: y mandatory; }
   .hero, .section, .footer { scroll-snap-align: start; scroll-snap-stop: always; }
-  .hero { min-height: 100svh; padding: 94px 18px 78px; }
+  .hero { min-height: 100svh; min-height: 100dvh; padding: 94px 18px 78px; }
   .hero .intro { max-width: 310px; margin: 0; font-size: 1.05rem; line-height: 1.7; }
   .names { height: clamp(152px, 42vw, 180px); }
   .names .name-first, .names .name-second { font-size: clamp(3.7rem, 16vw, 4.3rem); }
@@ -213,7 +213,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .countdown strong { font-size: clamp(1.65rem, 7.5vw, 2.4rem); }
   .countdown span { font-size: .95rem; }
   .date-line { font-size: .61rem; letter-spacing: .12em; }
-  .section { min-height: 100vh; min-height: 100svh; padding: 58px 18px; }
+  .section { min-height: 100vh; min-height: 100svh; min-height: 100dvh; padding: 58px 18px; }
   .event-card { width: 100%; padding: 30px 15px; border-radius: 20px; }
   .celebration { padding-top: 38px; padding-bottom: 38px; }
   .celebration-rings { width: clamp(82px, 23vw, 96px); }
@@ -243,7 +243,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .map-modal-panel > p { margin-bottom: 12px; font-size: .82rem; }
   .venue-map { height: min(48svh, 340px); }
   .map-modal-panel .close-action { width: 100%; margin-top: 12px; }
-  .footer { min-height: 100svh; padding: 36px 20px; }
+  .footer { min-height: 100svh; min-height: 100dvh; padding: 36px 20px; }
   .floral { height: 80px; background-size: auto 200%; background-position: center bottom; }
 }
 @media (max-width: 540px) and (max-height: 650px) {
