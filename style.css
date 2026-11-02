@@ -281,3 +281,9 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .modal-panel { padding-left: 16px; padding-right: 16px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+
+
+
+#detalles{
+  margin: .7em 0;
+}
