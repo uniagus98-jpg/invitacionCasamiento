@@ -206,7 +206,7 @@ document.querySelectorAll(".copy-alias-button").forEach(button => {
       temporaryField.remove();
     }
 
-    showToast(copied ? "Alias copiado al portapapeles" : "No se pudo copiar. Seleccioná el alias para copiarlo.");
+    showToast(copied ? "" : "No se pudo copiar. Seleccioná el alias para copiarlo.");
   });
 });
 const rsvpForm = document.getElementById("rsvpForm");
