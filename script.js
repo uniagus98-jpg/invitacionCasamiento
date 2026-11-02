@@ -150,6 +150,7 @@ function openModal(id) {
   modal.querySelector(".close")?.focus();
 }
 function closeModal(modal) {
+  if (modal.id === "rsvpModal" && rsvpSubmissionPending) return;
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   if (!modals.some(m => m.classList.contains("open"))) document.body.style.overflow = "";
@@ -211,10 +212,16 @@ document.querySelectorAll(".copy-alias-button").forEach(button => {
 });
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpResponseFrame = document.getElementById("rsvpResponseFrame");
+const rsvpSubmitButton = rsvpForm?.querySelector('[type="submit"]');
+const rsvpSubmitLabel = rsvpSubmitButton?.querySelector(".submit-label");
 let rsvpSubmissionPending = false;
 rsvpResponseFrame?.addEventListener("load", () => {
   if (!rsvpSubmissionPending) return;
   rsvpSubmissionPending = false;
+  rsvpSubmitButton.disabled = false;
+  rsvpSubmitButton.classList.remove("is-loading");
+  rsvpSubmitButton.setAttribute("aria-busy", "false");
+  rsvpSubmitLabel.textContent = "Enviar confirmación";
   showToast("¡Gracias! Tu respuesta se guardó correctamente.");
   rsvpForm.reset();
   closeModal(rsvpForm.closest(".modal"));
@@ -224,6 +231,7 @@ document.querySelectorAll(".local-form").forEach(form => {
   form.addEventListener("submit", event => {
     event.preventDefault();
     if (form.id === "rsvpForm") {
+      if (rsvpSubmissionPending) return;
       if (!RSVP_WEB_APP_URL) {
         showToast("La hoja de confirmaciones todavía no está conectada.");
         return;
@@ -232,6 +240,10 @@ document.querySelectorAll(".local-form").forEach(form => {
       form.method = "POST";
       form.target = "rsvpResponseFrame";
       rsvpSubmissionPending = true;
+      rsvpSubmitButton.disabled = true;
+      rsvpSubmitButton.classList.add("is-loading");
+      rsvpSubmitButton.setAttribute("aria-busy", "true");
+      rsvpSubmitLabel.textContent = "Enviando…";
       HTMLFormElement.prototype.submit.call(form);
       return;
     }
