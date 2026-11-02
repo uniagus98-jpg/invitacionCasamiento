@@ -35,6 +35,9 @@ if (invitationScroller && window.matchMedia("(max-width: 540px)").matches) {
       if (touch && Math.abs(touch.clientX - sectionTouchStart.x) > Math.abs(touch.clientY - sectionTouchStart.y)) return;
     }
 
+    const touch = event.touches[0];
+    if (touch && sectionTouchStart && touch.clientY > sectionTouchStart.y && Math.abs(touch.clientY - sectionTouchStart.y) > Math.abs(touch.clientX - sectionTouchStart.x)) return;
+
     event.preventDefault();
   }, { passive: false });
 
@@ -42,7 +45,7 @@ if (invitationScroller && window.matchMedia("(max-width: 540px)").matches) {
   invitationScroller.addEventListener("touchcancel", () => { sectionTouchStart = null; }, { passive: true });
   invitationScroller.addEventListener("wheel", event => {
     const target = event.target instanceof Element ? event.target : null;
-    if (!target?.closest(".details-section, .modal-panel")) event.preventDefault();
+    if (!target?.closest(".details-section, .modal-panel") && event.deltaY >= 0) event.preventDefault();
   }, { passive: false });
 }
 
