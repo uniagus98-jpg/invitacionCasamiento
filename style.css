@@ -182,7 +182,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
 .close-action { margin-top: 10px; }
 .gift-data { padding: 20px; background: #f5f1e8; border-radius: 12px; line-height: 1.6; overflow-wrap: anywhere; }
 .copy-alias-button { margin: 10px 0 2px; padding: 10px 14px; font-size: .78rem; }
-.drive-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 5px; color: var(--gold-dark); font-weight: 500; text-underline-offset: 3px; }
+.drive-link { text-decoration: none; }
 .music-platform-links { display: grid; gap: 12px; margin: 18px 0 8px; }
 .music-platform { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px; background: #f5f1e8; color: var(--gold-dark); font-weight: 500; text-decoration: none; transition: background .2s ease, transform .2s ease; }
 .music-platform:hover { transform: translateY(-1px); background: #eee8dc; }
