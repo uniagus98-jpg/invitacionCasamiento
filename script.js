@@ -20,28 +20,59 @@ setInterval(updateCountdown, 1000);
 
 const invitationScroller = document.querySelector(".invitation");
 let sectionTouchStart = null;
+const sectionSelector = ".hero, .section, .footer";
+function goToPreviousSection(startElement) {
+  const sections = [...invitationScroller.querySelectorAll(sectionSelector)];
+  const currentSection = startElement instanceof Element ? startElement.closest(sectionSelector) : null;
+  const currentIndex = sections.indexOf(currentSection);
+  if (currentIndex > 0) sections[currentIndex - 1].scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 if (invitationScroller && window.matchMedia("(max-width: 540px)").matches) {
   invitationScroller.addEventListener("touchstart", event => {
     const touch = event.touches[0];
-    sectionTouchStart = touch ? { x: touch.clientX, y: touch.clientY } : null;
+    const target = event.target instanceof Element ? event.target : null;
+    const details = target?.closest(".details-section");
+    sectionTouchStart = touch ? {
+      x: touch.clientX,
+      y: touch.clientY,
+      target,
+      details,
+      detailsAtTop: !details || details.scrollTop <= 1
+    } : null;
   }, { passive: true });
 
   invitationScroller.addEventListener("touchmove", event => {
     const target = event.target instanceof Element ? event.target : null;
-    if (target?.closest(".details-section, .modal-panel")) return;
-
-    if (target?.closest(".gallery-frame") && sectionTouchStart) {
-      const touch = event.touches[0];
-      if (touch && Math.abs(touch.clientX - sectionTouchStart.x) > Math.abs(touch.clientY - sectionTouchStart.y)) return;
-    }
+    if (target?.closest(".modal-panel")) return;
 
     const touch = event.touches[0];
-    if (touch && sectionTouchStart && touch.clientY > sectionTouchStart.y && Math.abs(touch.clientY - sectionTouchStart.y) > Math.abs(touch.clientX - sectionTouchStart.x)) return;
+    if (target?.closest(".details-section")) {
+      if (sectionTouchStart?.detailsAtTop && touch && touch.clientY > sectionTouchStart.y && Math.abs(touch.clientY - sectionTouchStart.y) > Math.abs(touch.clientX - sectionTouchStart.x)) event.preventDefault();
+      return;
+    }
+
+    if (target?.closest(".gallery-frame") && sectionTouchStart) {
+      if (touch && Math.abs(touch.clientX - sectionTouchStart.x) > Math.abs(touch.clientY - sectionTouchStart.y)) return;
+    }
 
     event.preventDefault();
   }, { passive: false });
 
-  invitationScroller.addEventListener("touchend", () => { sectionTouchStart = null; }, { passive: true });
+  invitationScroller.addEventListener("touchend", event => {
+    const start = sectionTouchStart;
+    const touch = event.changedTouches[0];
+    sectionTouchStart = null;
+    if (!start || !touch || start.target?.closest(".modal-panel")) return;
+
+    const deltaY = touch.clientY - start.y;
+    const deltaX = touch.clientX - start.x;
+    const isReturnSwipe = deltaY > 65 && deltaY > Math.abs(deltaX) * 1.2;
+    if (!isReturnSwipe) return;
+
+    if (start.details && !start.detailsAtTop) return;
+    goToPreviousSection(start.target);
+  }, { passive: true });
   invitationScroller.addEventListener("touchcancel", () => { sectionTouchStart = null; }, { passive: true });
   invitationScroller.addEventListener("wheel", event => {
     const target = event.target instanceof Element ? event.target : null;
