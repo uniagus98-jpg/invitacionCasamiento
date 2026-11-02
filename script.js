@@ -1,5 +1,5 @@
 // Cambiá esta fecha por la fecha real del evento (AAAA-MM-DDTHH:MM:SS).
-const eventDate = new Date("2026-12-05T18:00:00");
+const eventDate = new Date("2026-12-05T17:30:00");
 const RSVP_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwEBdqZ77p_l0C0kte9xPQPTErxG7R5a2HGWB7t65Dk8WUneITD1prleFnuaXBNB95I5Q/exec";
 
 function updateCountdown() {
