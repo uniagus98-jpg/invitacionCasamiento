@@ -254,7 +254,7 @@ h2 { color: var(--gold); font-size: clamp(2.5rem, 9vw, 4rem); line-height: .98; 
   .details-section.has-next { padding-bottom: 18px; }
   .details-section > *:not(.section-next) { flex: 0 0 auto; }
   .details-section > .section-next { position: relative; bottom: auto; left: auto; translate: none; flex: 0 0 auto; margin: 10px 0 0; }
-  .details-title { font-size: clamp(1.8rem, 7.2vw, 2.25rem); }
+  .details-title { font-size: clamp(2rem, 8.2vw, 2.5rem); }
   .detail-card { min-height: 0; padding: 28px 20px; border-radius: 18px; }
   .detail-card h2 { font-size: clamp(2rem, 9vw, 2.5rem); }
   .detail-card p { font-size: .85rem; flex: initial; }
