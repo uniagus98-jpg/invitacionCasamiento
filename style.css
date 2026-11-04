@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
 /* Invitación romántica: marfil + dorado champán */
 :root {
   --ivory: #f7f5f0;
@@ -9,14 +11,6 @@
   --line: #d8c9a8;
   --shadow: 0 16px 45px rgba(62, 52, 35, .13);
 }
-@font-face {
-  font-family: 'fuente';
-  src: url('Pinyon_Script/PinyonScript-Regular.ttf') format('woff2'),
-       url('Pinyon_Script/PinyonScript-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 0; }
 body { margin: 0; width: 100%; min-width: 0; background: #e7e2d8; color: var(--ink); font-family: 'Montserrat', sans-serif; font-weight: 300; overflow-x: clip; }
@@ -64,13 +58,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero .hero-down:hover { color: #f5ead5; background: rgba(35, 31, 26, .38); }
 .eyebrow { font-size: .68rem; letter-spacing: .24em; font-weight: 500; color: var(--gold-dark); margin: 0 0 17px; }
 h1, h2, h3, .countdown strong, .event-date strong { font-family: 'Crimson Text', Georgia, serif; }
-.names { font-family: 'fuente'; }
+.names { font-family: 'Pinyon Script', cursive; }
 h1 { color: var(--gold); font-size: clamp(2.5rem, 12vw, 4rem); line-height: .82; font-weight: 600; margin: 0 0 24px; }
 h1 em { font-weight: 400; }
 .intro { max-width: 340px; line-height: 1.8; font-size: .94rem; }
 .hero .intro::before { content: ""; display: block; width: var(--hero-divider-width); height: 1px; margin: 0 auto 16px; background: var(--line); }
 .names { position: relative; width: min(100%, 300px); height: clamp(160px, 30vw, 210px); flex: 0 0 auto; color: var(--gold-dark); margin: 0; }
-.names span { position: absolute; font-family: 'fuente'; line-height: 1; white-space: nowrap; }
+.names span { position: absolute; font-family: 'Pinyon Script', cursive; line-height: 1; white-space: nowrap; }
 .names .name-first, .names .name-second { font-size: clamp(5rem, 9vw, 6rem); }
 .names .name-first { top: 0; left: 6%; }
 .names .name-ampersand { top: 48%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(2.6rem, 6vw, 3.6rem); font-style: italic; color: var(--gold); }
